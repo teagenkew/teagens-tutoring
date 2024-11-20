@@ -202,9 +202,7 @@ After clicking "practice questions" on Topic Menu
   - Gets all comments for a topic
   - Example response:
 
-          - [
-
-    {
+    - [ {
     "comment_id": "1",
     "unit": "Physics",
     "topic": "Kinematics",
@@ -241,9 +239,9 @@ After clicking "practice questions" on Topic Menu
       }
 
 - ###### DELETE notes/:unit/:topic/comment/:id
-      - Deletes a comment by comment ID
-      - Example Response:
-          - {
+  - Deletes a comment by comment ID
+    - Example Response:
+      - {
   "status": "success",
   "message": "Comment deleted successfully.",
   "deleted_comment_id": "4"
