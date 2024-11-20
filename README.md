@@ -81,11 +81,13 @@ after clicking on notes in previous topic menu:
 ### Topic Quiz Page:
 
 after clicking "Quiz Myself on This Topic"
+
 ![](./mockup_images/Mobile-Quiz.png)
 
 ### Practice Question:
 
 After clicking "practice questions" on Topic Menu
+
 ![](./mockup_images/Mobile-PracticeQuestions.png)
 
 ### About Page:
