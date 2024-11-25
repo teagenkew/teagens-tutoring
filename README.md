@@ -41,7 +41,7 @@ Highschool physics and math students will use this website to learn.
 
 ### APIs
 
-- Calendly
+- Calendly --> use iframe for basic functionality. 
 - Newton
 - Desmos (maybe)
 
