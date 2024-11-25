@@ -7,6 +7,7 @@ import KinematicsNotes from "./pages/Notes/Physics/Kinematics/KinematicsNotes";
 import KinematicsPQ from "./pages/PracticeQuestions/Physics/Kinematics/KinematicsPQ";
 import CompositeFunctionsNotes from "./pages/Notes/Math/CompositeFunctions/CompositeFunctionsNotes";
 import CompositeFunctionsPQ from "./pages/PracticeQuestions/Math/CompositeFunctions/CompositeFunctionsPQ";
+import BookASession from "./pages/BookASession/BookASession";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<About />} />{" "}
+          <Route path="/book" element={<BookASession />} />
           <Route path="/:subject/topics" element={<TopicMenu />} />
           <Route
             path="/physics/kinematics/notes"
