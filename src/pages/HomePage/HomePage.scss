@@ -16,22 +16,29 @@ body {
 
 .physics {
   height: 170px;
-  width: 100%;
+  width: 80%;
   background-color: $Sky;
   border: 2px solid $Black;
   border-radius: 15px;
   box-shadow: -4px 4px $Black;
+  transition: all 0.2s ease; // Smooth transition effect
+  &:active {
+    box-shadow: 0 0 0 $Black; // Removes the shadow
+    transform: translate(-4px, 4px);
+  }
 }
 
 .math {
   height: 170px;
-  width: 100%;
+  width: 80%;
   background-color: $Clementine;
   border: 2px solid $Black;
   border-radius: 15px;
   box-shadow: -4px 4px $Black;
-}
+  transition: all 0.2s ease; // Smooth transition effect
 
-.subject-link {
-  width: 80%;
+  &:active {
+    box-shadow: 0 0 0 $Black; // Removes the shadow
+    transform: translate(-4px, 4px);
+  }
 }
