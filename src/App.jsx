@@ -5,6 +5,7 @@ import About from "./pages/About/About";
 import TopicMenu from "./pages/TopicMenu/TopicMenu";
 import TopicPage from "./pages/TopicPage/TopicPage";
 import BookASession from "./pages/BookASession/BookASession";
+import KinematicsPQ from "./pages/PracticeQuestions/Physics/Kinematics/KinematicsPQ";
 
 function App() {
   return (
@@ -14,11 +15,12 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />{" "}
           <Route path="/book" element={<BookASession />} />
-          <Route
-            path="/:subject/topics"
-            element={<TopicMenu subject="physics" />}
-          />
+          <Route path="/:subject/topics" element={<TopicMenu />} />
           <Route path="/:subject/topics/:topic" element={<TopicPage />} />
+          <Route
+            path="/physics/topics/kinematics/practice-questions"
+            element={<KinematicsPQ />}
+          />
         </Routes>
       </BrowserRouter>
     </>
