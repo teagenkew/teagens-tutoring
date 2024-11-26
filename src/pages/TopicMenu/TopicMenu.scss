@@ -7,14 +7,12 @@
     font-style: italic;
     font-weight: 500;
     margin-bottom: 2rem;
+    text-align: center;
   }
-  &__container-physics {
-    @include background-card-style($Sky);
-    padding: 1rem;
-  }
-  &__container-math {
-    @include background-card-style($Clementine);
-    padding: 1rem;
+  &__container {
+    @include background-card-style($Stone2);
+    z-index: 1;
+    margin-top: -1.875rem;
   }
 }
 .topic-container:nth-child(1) {
@@ -24,13 +22,13 @@
   @include card-style($Coral);
 }
 .topic-container:nth-child(3) {
-  @include card-style($Sage);
+  @include card-style($Clementine);
 }
 
 .topic-container {
-  margin-bottom: 1rem;
   display: flex;
   justify-content: center;
+  margin: 0 1rem 1rem 1rem;
 }
 .topic-list {
   width: 100%;

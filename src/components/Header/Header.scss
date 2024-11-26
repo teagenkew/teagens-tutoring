@@ -4,6 +4,16 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  height: 30vh;
+  &--blue {
+    background-color: $Sky;
+  }
+  &--purple {
+    background-color: $Lilac;
+  }
+  &--orange {
+    background-color: $Clementine;
+  }
 
   &__logo {
     width: 100%;

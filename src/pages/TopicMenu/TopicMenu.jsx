@@ -18,14 +18,8 @@ function TopicMenu() {
   };
   return (
     <div>
-      <Header />
-      <div
-        className={
-          subject == "physics"
-            ? "topic-menu__container-physics"
-            : "topic-menu__container-math"
-        }
-      >
+      <Header color={"blue"} />
+      <div className="topic-menu__container">
         <h1 className="topic-menu__title">
           {subject.charAt(0).toUpperCase() + subject.slice(1)}
         </h1>

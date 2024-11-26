@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/Logo.svg";
 import "./Header.scss";
 
-function Header() {
+function Header({ color }) {
   const navigate = useNavigate();
 
   const handleClick = (path) => {
@@ -10,8 +10,10 @@ function Header() {
       navigate(path);
     }, 200);
   };
+  const themeClass = color ? `nav--${color}` : "";
+
   return (
-    <nav className="nav">
+    <nav className={`nav ${themeClass}`}>
       <Link to="/" className="nav__logo-link">
         <img src={logo} alt="teagens tutoring logo" className="nav__logo" />
       </Link>
