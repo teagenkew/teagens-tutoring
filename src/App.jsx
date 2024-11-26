@@ -3,10 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import About from "./pages/About/About";
 import TopicMenu from "./pages/TopicMenu/TopicMenu";
-import KinematicsNotes from "./pages/Notes/Physics/Kinematics/KinematicsNotes";
-import KinematicsPQ from "./pages/PracticeQuestions/Physics/Kinematics/KinematicsPQ";
-import CompositeFunctionsNotes from "./pages/Notes/Math/CompositeFunctions/CompositeFunctionsNotes";
-import CompositeFunctionsPQ from "./pages/PracticeQuestions/Math/CompositeFunctions/CompositeFunctionsPQ";
+import TopicPage from "./pages/TopicPage/TopicPage";
 import BookASession from "./pages/BookASession/BookASession";
 
 function App() {
@@ -17,23 +14,11 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />{" "}
           <Route path="/book" element={<BookASession />} />
-          <Route path="/:subject/topics" element={<TopicMenu />} />
           <Route
-            path="/physics/kinematics/notes"
-            element={<KinematicsNotes />}
-          />{" "}
-          <Route
-            path="/physics/kinematics/practice"
-            element={<KinematicsPQ />}
+            path="/:subject/topics"
+            element={<TopicMenu subject="physics" />}
           />
-          <Route
-            path="/math/compositefunctions/notes"
-            element={<CompositeFunctionsNotes />}
-          />{" "}
-          <Route
-            path="/math/compositefunctions/practice"
-            element={<CompositeFunctionsPQ />}
-          />
+          <Route path="/:subject/topics/:topic" element={<TopicPage />} />
         </Routes>
       </BrowserRouter>
     </>

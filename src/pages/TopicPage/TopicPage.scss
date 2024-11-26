@@ -1,0 +1,33 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+.topic-page {
+  &__container {
+    @include background-card-style($Lilac);
+    justify-content: flex-start;
+  }
+
+  &__title {
+    @include heading-one;
+    font-weight:600;
+  }
+
+  &__notes-container,
+  &__pq-container {
+    @include card-style($Lilac);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+    margin-bottom: 2rem;
+    height: 30vh;
+  }
+
+  &__notes-title,
+  &__pq-title {
+    @include heading-three;
+  }
+  &__image {
+    width: 9.375rem;
+  }
+}
