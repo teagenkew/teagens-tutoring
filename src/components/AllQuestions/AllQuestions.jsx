@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
-function AllQuestions() {
+function AllQuestions({ color }) {
   const [keywords, setKeywords] = useState([]);
   const [allQuestions, setAllQuestions] = useState([]);
   const [selectedKeywords, setSelectedKeywords] = useState([]);
@@ -67,7 +67,9 @@ function AllQuestions() {
             <div
               key={index}
               className={`all-q__tag ${
-                selectedKeywords.includes(keyword) ? "selected" : ""
+                selectedKeywords.includes(keyword)
+                  ? `all-q__tag--selected-${color}`
+                  : `all-q__tag--${color}`
               }`}
               onClick={() => handleTagClick(keyword)}
             >

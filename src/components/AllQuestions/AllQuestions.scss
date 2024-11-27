@@ -8,13 +8,28 @@
     gap: 5px;
   }
   &__tag {
-    background-color: $Lilac;
-    color: $Plum;
     padding: 0 5px;
     border-radius: 10px;
-    &.selected {
+
+    &--red {
+      background-color: $Coral;
+      color: $DarkRed;
+    }
+    &--orange {
+      background-color: $Clementine;
+      color: $Black;
+    }
+    &--selected-purple {
       background-color: $Plum;
       color: $Lilac;
+    }
+    &--selected-red {
+      background-color: $DarkRed;
+      color: $Stone;
+    }
+    &--selected-orange {
+      background-color: $Sunset;
+      color: $Stone;
     }
   }
   &__list {
