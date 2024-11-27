@@ -51,9 +51,7 @@ function AllQuestions() {
         question.topic.toLowerCase() === topic.toLowerCase();
       const matchesKeywords =
         selectedKeywords.length === 0 ||
-        selectedKeywords.every((keyword) =>
-          question.keywords.includes(keyword)
-        );
+        selectedKeywords.some((keyword) => question.keywords.includes(keyword));
 
       return matchesSubjectAndTopic && matchesKeywords;
     });
