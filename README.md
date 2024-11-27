@@ -126,14 +126,6 @@ After clicking "practice questions" on Topic Menu
 | 5   | 3       | 15 N          | 0          |
 | 6   | 3       | 20 N          | 0          |
 
-##### Topic Table
-
-| ID  | Subject | Unit       | Topic             |
-| --- | ------- | ---------- | ----------------- |
-| 1   | Physics | Kinematics | Vectors           |
-| 2   | Phyiscs | Forces     | Tension           |
-| 3   | Physics | Kinematics | Projectile Motion |
-
 ##### Comments Table
 
 | ID  | Topic ID | Username | Comment Text     | Created At |
