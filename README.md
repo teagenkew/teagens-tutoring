@@ -41,7 +41,7 @@ Highschool physics and math students will use this website to learn.
 
 ### APIs
 
-- Calendly
+- Calendly --> use iframe for basic functionality. 
 - Newton
 - Desmos (maybe)
 
@@ -126,14 +126,6 @@ After clicking "practice questions" on Topic Menu
 | 5   | 3       | 15 N          | 0          |
 | 6   | 3       | 20 N          | 0          |
 
-##### Topic Table
-
-| ID  | Subject | Unit       | Topic             |
-| --- | ------- | ---------- | ----------------- |
-| 1   | Physics | Kinematics | Vectors           |
-| 2   | Phyiscs | Forces     | Tension           |
-| 3   | Physics | Kinematics | Projectile Motion |
-
 ##### Comments Table
 
 | ID  | Topic ID | Username | Comment Text     | Created At |
@@ -202,9 +194,7 @@ After clicking "practice questions" on Topic Menu
   - Gets all comments for a topic
   - Example response:
 
-          - [
-
-    {
+    - [ {
     "comment_id": "1",
     "unit": "Physics",
     "topic": "Kinematics",
@@ -241,9 +231,9 @@ After clicking "practice questions" on Topic Menu
       }
 
 - ###### DELETE notes/:unit/:topic/comment/:id
-      - Deletes a comment by comment ID
-      - Example Response:
-          - {
+  - Deletes a comment by comment ID
+    - Example Response:
+      - {
   "status": "success",
   "message": "Comment deleted successfully.",
   "deleted_comment_id": "4"
