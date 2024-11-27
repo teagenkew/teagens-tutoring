@@ -1,0 +1,28 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.all-q {
+  &__tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  &__tag {
+    background-color: $Lilac;
+    color: $Plum;
+    padding: 0 5px;
+    border-radius: 10px;
+    &:active {
+      background-color: $Plum;
+      color: $Lilac;
+    }
+  }
+  &__list {
+    list-style: decimal;
+    padding: 0;
+    margin: 2rem;
+  }
+  &__list-item {
+    border-bottom: 1px solid $Black;
+  }
+}

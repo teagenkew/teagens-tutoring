@@ -18,7 +18,7 @@ function App() {
           <Route path="/:subject/topics" element={<TopicMenu />} />
           <Route path="/:subject/topics/:topic" element={<TopicPage />} />
           <Route
-            path="/physics/topics/kinematics/practice-questions"
+            path="/:subject/topics/:topic/practice-questions"
             element={<KinematicsPQ />}
           />
         </Routes>
