@@ -5,7 +5,7 @@ import About from "./pages/About/About";
 import TopicMenu from "./pages/TopicMenu/TopicMenu";
 import TopicPage from "./pages/TopicPage/TopicPage";
 import BookASession from "./pages/BookASession/BookASession";
-import KinematicsPQ from "./pages/PracticeQuestions/Physics/Kinematics/KinematicsPQ";
+import PracticeQuestions from "./pages/PracticeQuestions/PracticeQuestions";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           <Route path="/:subject/topics/:topic" element={<TopicPage />} />
           <Route
             path="/:subject/topics/:topic/practice-questions"
-            element={<KinematicsPQ />}
+            element={<PracticeQuestions />}
           />
         </Routes>
       </BrowserRouter>

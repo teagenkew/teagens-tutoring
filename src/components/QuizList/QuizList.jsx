@@ -3,9 +3,9 @@ import "./QuizList.scss";
 const quizzes = ["Vectors", "Projectile Motion"];
 function QuizList() {
   return (
-    <div>
-      <h2>Quizzes</h2>
-      <ul className="quiz-list__list">
+    <div className="quiz-list">
+      <h2 className="quiz-list__title">Quizzes</h2>
+      <ol className="quiz-list__list">
         {quizzes.map((quiz, index) => {
           return (
             <li key={index} className="quiz-list__list-item">
@@ -13,7 +13,7 @@ function QuizList() {
             </li>
           );
         })}
-      </ul>
+      </ol>
     </div>
   );
 }

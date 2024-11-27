@@ -1,11 +1,11 @@
-import "./KinematicsPQ.scss";
-import NavBar from "../../../../components/NavBar/NavBar";
-import QuizList from "../../../../components/QuizList/QuizList";
-import HeaderNoNav from "../../../../components/HeaderNoNav/HeaderNoNav";
-import AllQuestions from "../../../../components/AllQuestions/AllQuestions";
+import "./PracticeQuestions.scss";
+import NavBar from "../../components/NavBar/NavBar";
+import QuizList from "../../components/QuizList/QuizList";
+import HeaderNoNav from "../../components/HeaderNoNav/HeaderNoNav";
+import AllQuestions from "../../components/AllQuestions/AllQuestions";
 import { useLocation } from "react-router-dom";
 
-function KinematicsPQ() {
+function PracticeQuestions() {
   const location = useLocation();
   let color;
   const topic = location.pathname.split("/")[3];
@@ -29,4 +29,4 @@ function KinematicsPQ() {
   );
 }
 
-export default KinematicsPQ;
+export default PracticeQuestions;

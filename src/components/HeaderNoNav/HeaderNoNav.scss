@@ -1,10 +1,10 @@
 @use "../../styles/variables" as *;
-.nav {
+.header-no-nav {
   background-color: $Stone;
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  height: 30vh;
+  height: 23vh;
   &--blue {
     background-color: $Sky;
   }

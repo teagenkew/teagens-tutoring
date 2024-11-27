@@ -59,8 +59,8 @@ function AllQuestions({ color }) {
   }, [subject, topic, allQuestions, selectedKeywords]);
 
   return (
-    <div>
-      <h2>All Questions</h2>
+    <div className="all-q__container">
+      <h2 className="all-q__title"> All Questions</h2>
       <div className="all-q__tags-container">
         {keywords.map((keyword, index) => {
           return (

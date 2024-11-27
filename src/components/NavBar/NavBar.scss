@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-evenly;
   padding: 0.5rem;
-  width: 90%;
+  width: 100%;
   border-radius: 15px;
   border: 2px solid $Black;
   &--purple {
@@ -32,7 +32,7 @@
     background-color: $Lilac;
   }
   &--red {
-    background-color: $Red;
+    background-color: $Coral;
   }
   &--orange {
     background-color: $Clementine;
