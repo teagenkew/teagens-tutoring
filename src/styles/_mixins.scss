@@ -14,9 +14,9 @@
 
 @mixin background-card-style($color) {
   background-color: $color;
-  height: 80vh;
   border: 1px solid $Black;
   border-radius: 20px 20px 0 0;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;

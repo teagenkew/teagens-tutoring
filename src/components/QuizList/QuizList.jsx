@@ -1,6 +1,6 @@
 import "./QuizList.scss";
 
-const quizzes = ["Vectors", "Projectile Motion", "River Questions"];
+const quizzes = ["Vectors", "Projectile Motion"];
 function QuizList() {
   return (
     <div>
