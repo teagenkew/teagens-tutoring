@@ -5,8 +5,10 @@ import { useEffect, useState } from "react";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 function AllQuestions() {
-  const [questions, setQuestions] = useState([]);
   const [keywords, setKeywords] = useState([]);
+  const [allQuestions, setAllQuestions] = useState([]);
+  const [selectedKeywords, setSelectedKeywords] = useState([]);
+  const [filteredQuestions, setFilteredQuestions] = useState([]);
   const { subject, topic } = useParams();
 
   const getQuestions = async () => {
@@ -18,13 +20,22 @@ function AllQuestions() {
     return keywords.data;
   };
 
+  const handleTagClick = (keyword) => {
+    setSelectedKeywords((prevSelected) => {
+      if (prevSelected.includes(keyword)) {
+        return prevSelected.filter((kw) => kw !== keyword);
+      } else {
+        return [...prevSelected, keyword];
+      }
+    });
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
         const keywordsData = await getKeywords();
         setKeywords(keywordsData); // Update keywords state
         const questionsData = await getQuestions();
-        setQuestions(questionsData); // Optional: Update questions state
+        setAllQuestions(questionsData);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -33,24 +44,35 @@ function AllQuestions() {
     fetchData();
   }, []);
 
-  const filteredQuestions = questions.filter((question) => {
-    return (
-      question.subject.toLowerCase() === subject &&
-      question.unit.toLowerCase() === topic
-    );
-  });
-  // Conditional rendering: wait until questions are loaded
-  if (questions.length === 0 || keywords.length === 0) {
-    return <div>Loading...</div>;
-  }
-  console.log(filteredQuestions);
+  useEffect(() => {
+    const filter = allQuestions.filter((question) => {
+      const matchesSubjectAndTopic =
+        question.subject.toLowerCase() === subject.toLowerCase() &&
+        question.topic.toLowerCase() === topic.toLowerCase();
+      const matchesKeywords =
+        selectedKeywords.length === 0 ||
+        selectedKeywords.every((keyword) =>
+          question.keywords.includes(keyword)
+        );
+
+      return matchesSubjectAndTopic && matchesKeywords;
+    });
+    setFilteredQuestions(filter);
+  }, [subject, topic, allQuestions, selectedKeywords]);
+
   return (
     <div>
       <h2>All Questions</h2>
       <div className="all-q__tags-container">
         {keywords.map((keyword, index) => {
           return (
-            <div key={index} className="all-q__tag">
+            <div
+              key={index}
+              className={`all-q__tag ${
+                selectedKeywords.includes(keyword) ? "selected" : ""
+              }`}
+              onClick={() => handleTagClick(keyword)}
+            >
               {keyword}
             </div>
           );
