@@ -1,0 +1,22 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.about {
+  &__container {
+    @include background-card-style($Forest);
+    justify-content: flex-start;
+  }
+  &__title {
+    @include heading-one;
+    color: $Stone;
+  }
+  &__paragraph {
+    font-size: 13px;
+    line-height:16px;
+    color: $Stone;
+    margin: 0;
+  }
+  &__paragraph-container {
+    padding: 1rem 2rem;
+  }
+}
