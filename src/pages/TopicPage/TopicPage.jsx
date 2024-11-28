@@ -7,6 +7,10 @@ function TopicPage() {
   const { subject, topic } = useParams();
   const navigate = useNavigate();
 
+  const formattedTopic = decodeURIComponent(
+    topic.replace(/([a-z])([A-Z])/g, "$1 $2")
+  );
+
   const handleClick = (path) => {
     setTimeout(() => {
       navigate(path);
@@ -18,13 +22,12 @@ function TopicPage() {
       <Header />
       <div className={`topic-page__container topic-page__container--${topic}`}>
         <h1 className="topic-page__title">
-          {topic.charAt(0).toUpperCase() + topic.slice(1)}
+          {formattedTopic.charAt(0).toUpperCase() + formattedTopic.slice(1)}
         </h1>
         <div
           className={`topic-page__notes-container topic-page__notes-container--${topic}`}
-          onClick={() =>
-            handleClick(`notes`)
-          } >
+          onClick={() => handleClick(`notes`)}
+        >
           <h2 className="topic-page__notes-title">notes</h2>
           <img
             src={notes}
@@ -34,9 +37,7 @@ function TopicPage() {
         </div>
         <div
           className={`topic-page__pq-container topic-page__pq-container--${topic}`}
-          onClick={() =>
-            handleClick(`practice-questions`)
-          }
+          onClick={() => handleClick(`practice-questions`)}
         >
           <h2 className="topic-page__pq-title">practice questions</h2>
           <img

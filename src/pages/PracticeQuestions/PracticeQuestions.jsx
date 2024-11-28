@@ -9,14 +9,13 @@ function PracticeQuestions() {
   const location = useLocation();
   let color;
   const topic = location.pathname.split("/")[3];
-  if (topic === "kinematics") {
+  if (topic === "kinematics" || topic === "compositeFunctions") {
     color = "purple";
-  } else if (topic === "forces") {
+  } else if (topic === "forces" || topic === "commonGraphs") {
     color = "red";
-  } else if (topic === "circuits") {
+  } else if (topic === "circuits" || topic === "trigonometry") {
     color = "orange";
   }
-
   return (
     <>
       <HeaderNoNav color={color} />

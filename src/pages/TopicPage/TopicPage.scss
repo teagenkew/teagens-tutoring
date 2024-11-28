@@ -13,6 +13,15 @@
     &--circuits {
       @include background-card-style($Clementine);
     }
+    &--compositeFunctions {
+      @include background-card-style($Lilac);
+    }
+    &--commonGraphs {
+      @include background-card-style($Coral);
+    }
+    &--trigonometry {
+      @include background-card-style($Clementine);
+    }
   }
 
   &__title {
@@ -39,11 +48,22 @@
     &--circuits {
       @include card-style($Clementine);
     }
+    &--compositeFunctions {
+      @include card-style($Lilac);
+    }
+    &--commonGraphs {
+      @include card-style($Coral);
+    }
+    &--trigonometry {
+      @include card-style($Clementine);
+    }
   }
 
   &__notes-title,
   &__pq-title {
     @include heading-three;
+    font-weight: 600;
+    padding-top: 0.5rem;
   }
   &__image {
     width: 9.375rem;

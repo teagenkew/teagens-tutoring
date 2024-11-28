@@ -31,7 +31,7 @@ function TopicMenu() {
                 key={index}
                 onClick={() =>
                   handleClick(
-                    `${topic.charAt(0).toLowerCase() + topic.slice(1)}/`
+                    `${topic.charAt(0).toLowerCase() + topic.slice(1)}/`.replace(/\s+/g, '')
                   )
                 }
               >
