@@ -1,0 +1,9 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.quiz {
+  &__container {
+    @include background-card-style($Stone);
+    padding: 1rem;
+  }
+}

@@ -7,6 +7,8 @@ import TopicPage from "./pages/TopicPage/TopicPage";
 import BookASession from "./pages/BookASession/BookASession";
 import PracticeQuestions from "./pages/PracticeQuestions/PracticeQuestions";
 import KinematicsNotes from "./pages/Notes/Physics/Kinematics/KinematicsNotes";
+import Quiz from "./pages/Quiz/Quiz";
+
 function App() {
   return (
     <>
@@ -25,6 +27,7 @@ function App() {
             path="/physics/topics/kinematics/notes"
             element={<KinematicsNotes />}
           />
+          <Route path="/:subject/topics/:topic/:unitQuiz" element={<Quiz />} />
         </Routes>
       </BrowserRouter>
     </>
