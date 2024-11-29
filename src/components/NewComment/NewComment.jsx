@@ -1,29 +1,45 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
-function NewComment() {
-  // State for form fields
+function NewComment({ refetchComments, topic }) {
   const [formData, setFormData] = useState({
     username: "",
     comment: "",
   });
 
-  // Handle changes in input fields
   const handleChange = (event) => {
     const { name, value } = event.target;
-    console.log(name, value); // Debugging: log to check values
-
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
   };
 
-  // Handle form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // Process form data (e.g., send to an API or update UI)
-    console.log(formData);
+    try {
+      const commentBody = {
+        topic: topic,
+        username: formData.username,
+        comment: formData.comment,
+      };
+      console.log(commentBody);
+      const sendComment = await axios.post(`${BASE_URL}/comments`, commentBody);
+      refetchComments();
+      console.log(sendComment.data);
+
+      setFormData({
+        username: "",
+        comment: "",
+      });
+    } catch (error) {
+      console.error("Error posting comment:", error);
+    }
   };
+
   return (
     <div>
       <h3 className="new-comment__title">Leave A Comment</h3>
