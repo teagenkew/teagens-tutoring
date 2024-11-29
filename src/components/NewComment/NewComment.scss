@@ -1,0 +1,68 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.new-comment {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    background-color: $Stone2;
+    border-radius: 20px;
+    border: 1px solid $Black;
+  }
+  &__title {
+    @include heading-two;
+    font-weight: 600;
+    font-style: normal;
+  }
+  &__label {
+    display: block;
+    @include body-text;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    margin-left: 5px;
+  }
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__username,
+  &__comment {
+    border-radius: 10px;
+    border: 1px solid $Black;
+    padding-left: 10px;
+    margin-bottom: 0.625rem;
+    font-style: italic;
+    font-size: 12px;
+    &:focus,
+    &:focus-visible {
+      outline: 1px solid $Plum;
+    }
+  }
+  &__username {
+    height: 2rem;
+  }
+  &__comment {
+    height: 4rem;
+    font-family: Inter;
+    padding-top: 10px;
+    resize: none;
+  }
+  &__button {
+    width: 50%;
+    align-self: center;
+    padding: 0.5rem;
+    background-color: $Plum;
+    border: none;
+    color: $Stone;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    box-shadow: -4px 4px $Black;
+    border-radius: 0.9375rem;
+  }
+}

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 import axios from "axios";
+import "./NewComment.scss";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 function NewComment({ refetchComments, topic }) {
@@ -41,31 +41,34 @@ function NewComment({ refetchComments, topic }) {
   };
 
   return (
-    <div>
+    <div className="new-comment__container">
       <h3 className="new-comment__title">Leave A Comment</h3>
       <form className="new-comment__form" onSubmit={handleSubmit}>
-        <label className="new-comment__label">
-          name
-          <input
-            type="text"
-            placeholder="type your name here"
-            onChange={handleChange}
-            value={formData.username}
-            name="username"
-          ></input>
-        </label>
+        <label className="new-comment__label">name </label>
+        <input
+          type="text"
+          placeholder="type your name here"
+          onChange={handleChange}
+          value={formData.username}
+          name="username"
+          className="new-comment__username"
+        ></input>
+
         <label htmlFor="comment" className="new-comment__label">
           comment
         </label>
         <textarea
-          placeholder="comment"
+          placeholder="write your comment here..."
           id="comment"
           onChange={handleChange}
           value={formData.comment}
           name="comment"
+          className="new-comment__comment"
         ></textarea>
 
-        <button type="submit">comment</button>
+        <button type="submit" className="new-comment__button">
+          comment
+        </button>
       </form>
     </div>
   );
