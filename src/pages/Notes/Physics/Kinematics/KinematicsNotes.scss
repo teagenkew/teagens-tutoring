@@ -1,0 +1,25 @@
+@use "../../../../styles/mixins" as *;
+@use "../../../../styles/variables" as *;
+
+.kinematics-notes {
+  @include background-card-style($Stone);
+  padding: 1rem;
+  gap:2rem;
+  &__title {
+    @include heading-one;
+    margin: 1rem 0;
+  }
+  &__nav {
+    display: flex;
+    width: 75%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  &__button {
+    background-color: $Plum;
+    color: $Stone;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 15px;
+  }
+}

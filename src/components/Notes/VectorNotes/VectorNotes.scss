@@ -1,0 +1,30 @@
+@use "../../../styles/mixins" as *;
+@use "../../../styles/variables" as *;
+
+.vector-notes {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &__title {
+    @include heading-two;
+  }
+  &__body {
+    @include body-text;
+  }
+}
+
+.notes__button {
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  background-color: $Plum;
+  border: none;
+  color: $Stone;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: -4px 4px $Black;
+  transition: all 0.2s ease; // Smooth transition effect
+  &:active {
+    box-shadow: 0 0 0 $Black; // Removes the shadow
+    transform: translate(-4px, 4px);
+  }
+}

@@ -18,7 +18,7 @@ function TopicMenu() {
   };
   return (
     <div>
-      <Header color={"blue"} />
+      <Header color={subject == "physics" ? "blue" : "orange"} />
       <div className="topic-menu__container">
         <h1 className="topic-menu__title">
           {subject.charAt(0).toUpperCase() + subject.slice(1)}
@@ -31,7 +31,9 @@ function TopicMenu() {
                 key={index}
                 onClick={() =>
                   handleClick(
-                    `${topic.charAt(0).toLowerCase() + topic.slice(1)}/`.replace(/\s+/g, '')
+                    `${
+                      topic.charAt(0).toLowerCase() + topic.slice(1)
+                    }/`.replace(/\s+/g, "")
                   )
                 }
               >

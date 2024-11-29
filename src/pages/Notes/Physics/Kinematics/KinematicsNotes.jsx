@@ -1,6 +1,7 @@
 import VectorNotes from "../../../../components/Notes/VectorNotes/VectorNotes";
 import Header from "../../../../components/Header/Header";
 import ProjectileMotion from "../../../../components/Notes/ProjectileMotion/ProjectileMotion";
+import "./KinematicsNotes.scss";
 import { useRef } from "react";
 
 function KinematicsNotes() {
@@ -13,22 +14,29 @@ function KinematicsNotes() {
   return (
     <div>
       <Header color="purple" />
-      <h1>Kinematics</h1>
-      <nav style={{ marginBottom: "20px" }}>
-        <button onClick={() => scrollToSection(vectorNotesRef)}>
-          Vector Notes
-        </button>
-        <button onClick={() => scrollToSection(projectileMotionRef)}>
-          Projectile Motion
-        </button>
-      </nav>
+      <div className="kinematics-notes">
+        <h1 className="kinematics-notes__title">Kinematics</h1>
+        <nav className="kinematics-notes__nav">
+          <button
+            className="kinematics-notes__button"
+            onClick={() => scrollToSection(vectorNotesRef)}
+          >
+            Vector Notes
+          </button>
+          <button
+            className="kinematics-notes__button"
+            onClick={() => scrollToSection(projectileMotionRef)}
+          >
+            Projectile Motion
+          </button>
+        </nav>
 
-      {/* Sections with refs */}
-      <div ref={vectorNotesRef}>
-        <VectorNotes />
-      </div>
-      <div ref={projectileMotionRef}>
-        <ProjectileMotion />
+        <div ref={vectorNotesRef}>
+          <VectorNotes />
+        </div>
+        <div ref={projectileMotionRef}>
+          <ProjectileMotion />
+        </div>
       </div>
     </div>
   );
