@@ -1,6 +1,7 @@
 import VectorNotes from "../../../../components/Notes/VectorNotes/VectorNotes";
 import Header from "../../../../components/Header/Header";
 import ProjectileMotion from "../../../../components/Notes/ProjectileMotion/ProjectileMotion";
+import Comments from "../../../../components/Comments/Comments";
 import "./KinematicsNotes.scss";
 import { useRef } from "react";
 
@@ -37,6 +38,7 @@ function KinematicsNotes() {
         <div ref={projectileMotionRef}>
           <ProjectileMotion />
         </div>
+        <Comments />
       </div>
     </div>
   );
