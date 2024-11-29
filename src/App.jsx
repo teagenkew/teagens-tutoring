@@ -27,6 +27,10 @@ function App() {
             path="/physics/topics/kinematics/notes"
             element={<KinematicsNotes />}
           />
+          <Route
+            path="/physics/topics/forces/notes"
+            element={<KinematicsNotes />}
+          />
           <Route path="/:subject/topics/:topic/:unitQuiz" element={<Quiz />} />
         </Routes>
       </BrowserRouter>

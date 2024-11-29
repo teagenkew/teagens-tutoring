@@ -30,7 +30,7 @@ function Quiz() {
 
   useEffect(() => {
     const getQuestions = async () => {
-      const fetchedQuestions = await fetchQuizQuestions("vector");
+      const fetchedQuestions = await fetchQuizQuestions(unit);
       setQuestions(fetchedQuestions);
     };
     getQuestions();

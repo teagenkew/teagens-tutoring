@@ -1,15 +1,18 @@
-import React from "react";
+import "./BookASession.scss";
+import HeaderNoNav from "../../components/HeaderNoNav/HeaderNoNav";
 
 function BookASession() {
   return (
     <>
-      <div>BookASession</div>
-      <iframe
-        src="https://calendly.com/teagenkew9"
-        width="80%"
-        height="650"
-        frameborder="0"
-      ></iframe>
+      <HeaderNoNav />
+      <div className="booking__container">
+        <div className="booking__calendar">
+          <iframe
+            src="https://calendly.com/teagenkew9/tutoring-session-1-hour"
+            frameborder="0"
+          ></iframe>
+        </div>
+      </div>
     </>
   );
 }

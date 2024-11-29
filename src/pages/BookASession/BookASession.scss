@@ -1,0 +1,30 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.booking {
+  &__container {
+    @include background-card-style($Coral);
+    background: linear-gradient(
+      135deg,
+      /* Gradient angle */ $Coral,
+      /* Starting color */ $Red,
+
+    );
+    padding: 2rem;
+    height: 90vh;
+  }
+  &__calendar {
+    border: 1px solid #ccc; /* Optional border */
+    border-radius: 8px; /* Rounded corners for style */
+    height: 390px;
+    overflow: hidden; /* Crop content overflowing container */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+}
+
+.booking__calendar iframe {
+  width: 100%; /* Full width of the container */
+  height: 400px; /* Specific height */
+  border: none; /* Remove default border */
+  transition: transform 0.3s ease-in-out; /* Add transition effect */
+}
