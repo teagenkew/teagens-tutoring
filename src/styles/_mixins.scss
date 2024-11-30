@@ -22,6 +22,9 @@
   align-items: center;
   z-index: 1;
   margin-top: -1.875rem;
+  @include desktop{
+    margin-top:-0.8rem;
+  }
 }
 @mixin heading-one {
   font-size: 2rem;
@@ -42,7 +45,25 @@
   padding: 0;
 }
 
+@mixin flex-center-column{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @mixin body-text {
   font-size: 16px;
   line-height: 20px;
+}
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
 }
