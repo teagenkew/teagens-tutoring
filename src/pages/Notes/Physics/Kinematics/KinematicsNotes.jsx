@@ -57,10 +57,13 @@ function KinematicsNotes() {
           </button>
         </nav>
 
-        <div ref={vectorNotesRef}>
+        <div ref={vectorNotesRef} className="kinematics-notes__container-one">
           <VectorNotes />
         </div>
-        <div ref={projectileMotionRef}>
+        <div
+          ref={projectileMotionRef}
+          className="kinematics-notes__container-two"
+        >
           <ProjectileMotion />
         </div>
         <NewComment refetchComments={refetchComments} topic={topic} />

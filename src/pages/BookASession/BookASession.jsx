@@ -6,6 +6,7 @@ function BookASession() {
     <>
       <HeaderNoNav />
       <div className="booking__container">
+        <h1 className="booking__title">Book A Session</h1>
         <div className="booking__calendar">
           <iframe
             src="https://calendly.com/teagenkew9/tutoring-session-1-hour"

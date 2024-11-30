@@ -35,7 +35,7 @@ function VectorNotes() {
         className="notes__button"
         onClick={() => navigate("/physics/topics/kinematics/vectors-quiz")}
       >
-        Quiz Myself
+        Quiz Myself on This Topic
       </button>
     </div>
   );

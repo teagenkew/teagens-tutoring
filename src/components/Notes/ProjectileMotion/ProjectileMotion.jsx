@@ -44,7 +44,7 @@ function ProjectileNotes() {
           navigate("/physics/topics/kinematics/projectile-motion-quiz")
         }
       >
-        Quiz Myself
+        Quiz Myself on This Topic
       </button>
     </div>
   );

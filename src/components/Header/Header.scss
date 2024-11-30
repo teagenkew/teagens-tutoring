@@ -21,8 +21,9 @@
   &__logo-link {
     width: 90%;
     align-self: center;
-    display:flex;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__button-container {
