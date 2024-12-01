@@ -37,12 +37,15 @@ function Quiz() {
   }, []);
 
   const checkAnswer = async (userAnswer, key) => {
+    if (!userAnswer) {
+      return;
+    }
+
     let isCorrect = false;
 
-    // Preprocess the user answer by replacing '/' with '(over)' and removing square brackets
     const processedUserAnswer = userAnswer
-      .replace(/\//g, "(over)") // Replace all occurrences of '/' with '(over)'
-      .replace(/\[|\]/g, " "); // Remove all square brackets
+      .replace(/\//g, "(over)")
+      .replace(/\[|\]/g, " ");
 
     const processedCorrectAnswer = questions[questionCount].answers[key]
       .replace(/\//g, "(over)")
@@ -52,7 +55,6 @@ function Quiz() {
     const inputAnswer = await newtonSimplify(processedUserAnswer);
 
     isCorrect = correctAnswer === inputAnswer;
-    console.log(isCorrect);
     setIsAnswerCorrect(isCorrect);
   };
 
@@ -65,7 +67,7 @@ function Quiz() {
 
   const nextQuestion = () => {
     setQuestionCount((prevCount) => prevCount + 1);
-    setIsAnswerCorrect(null); // Reset answer state for the next question
+    setIsAnswerCorrect(null);
     setUserAnswers({});
   };
 
@@ -87,43 +89,56 @@ function Quiz() {
             {Object.entries(questions[questionCount].parts)
               .sort(([keyA], [keyB]) => keyA.localeCompare(keyB))
               .map(([key, value], index) => (
-                <div key={index}>
+                <div key={index} className="quiz__submission-container">
                   <div className="quiz__question-part-container">
                     <p className="quiz__question-number">{key}.</p>
                     <p className="quiz__question">{value}</p>
                   </div>
-                  {questions[questionCount].questionType === "Single Answer" ? (
-                    <>
-                      <input
-                        className="quiz__input"
-                        type="text"
-                        placeholder={
-                          questions[questionCount].answerPlaceholders[key]
-                        }
-                        onChange={(event) => handleAnswerChange(event, key)}
-                        value={userAnswers[key] || ""}
-                      />
-                      <button
-                        className="quiz__submit-button"
-                        onClick={() => checkAnswer(userAnswers[key], key)}
-                      >
-                        Submit
-                      </button>
-                      {isAnswerCorrect !== null &&
-                        (isAnswerCorrect ? (
-                          <>
-                            <p>Correct! Move onto the next question? </p>
-                            <button onClick={nextQuestion}>Next</button>
-                          </>
-                        ) : (
-                          <p>
-                            that's not quite it. Try again or request some help
+                  <>
+                    <input
+                      className="quiz__input"
+                      type="text"
+                      placeholder={
+                        questions[questionCount].answerPlaceholders[key]
+                      }
+                      onChange={(event) => handleAnswerChange(event, key)}
+                      value={userAnswers[key] || ""}
+                    />
+                    <button
+                      className="quiz__submit-button"
+                      onClick={() => checkAnswer(userAnswers[key], key)}
+                    >
+                      Submit
+                    </button>
+
+                    {isAnswerCorrect !== null &&
+                      (isAnswerCorrect ? (
+                        <>
+                          <p className="quiz__feedback">
+                            <strong>Correct!</strong> Move onto the next question?{" "}
                           </p>
-                        ))}
-                    </>
-                  ) : (
-                    <p>multiple choice</p>
-                  )}
+                          <button
+                            className="quiz__next-button"
+                            onClick={nextQuestion}
+                          >
+                            Next
+                          </button>
+                        </>
+                      ) : (
+                        <>
+                          <p className="quiz__feedback">
+                            That's not quite it. Give it another try or move
+                            onto the next question.
+                          </p>
+                          <button
+                            className="quiz__next-button"
+                            onClick={nextQuestion}
+                          >
+                            Next
+                          </button>
+                        </>
+                      ))}
+                  </>
                 </div>
               ))}
           </div>

@@ -8,6 +8,7 @@ import BookASession from "./pages/BookASession/BookASession";
 import PracticeQuestions from "./pages/PracticeQuestions/PracticeQuestions";
 import KinematicsNotes from "./pages/Notes/Physics/Kinematics/KinematicsNotes";
 import Quiz from "./pages/Quiz/Quiz";
+import UnderConstruction from "./pages/UnderConstruction/UnderConstruction";
 
 function App() {
   return (
@@ -28,8 +29,8 @@ function App() {
             element={<KinematicsNotes />}
           />
           <Route
-            path="/physics/topics/forces/notes"
-            element={<KinematicsNotes />}
+            path="/:subject/topics/:topic/notes"
+            element={<UnderConstruction />}
           />
           <Route path="/:subject/topics/:topic/:unitQuiz" element={<Quiz />} />
         </Routes>

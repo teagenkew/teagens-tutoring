@@ -1,0 +1,11 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.under-construction {
+  &__container {
+    @include background-card-style($Stone2);
+    & {
+      padding: 2rem 1.5rem;
+    }
+  }
+}

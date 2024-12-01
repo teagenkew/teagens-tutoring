@@ -5,9 +5,9 @@
   border: 2px solid $Black;
   border-radius: 15px;
   box-shadow: -4px 4px $Black;
-  transition: all 0.2s ease; // Smooth transition effect
+  transition: all 0.2s ease; 
   &:active {
-    box-shadow: 0 0 0 $Black; // Removes the shadow
+    box-shadow: 0 0 0 $Black; 
     transform: translate(-4px, 4px);
   }
 }
