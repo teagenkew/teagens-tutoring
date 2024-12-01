@@ -22,6 +22,7 @@ function PracticeQuestions() {
       <div className="practice-question__container">
         <NavBar color={color} />
         <QuizList />
+        
         <AllQuestions color={color} />
       </div>
     </>

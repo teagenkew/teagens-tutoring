@@ -77,20 +77,25 @@ function Quiz() {
         {!questions[questionCount] ? (
           <div>Loading...</div>
         ) : (
-          <div>
-            <div>
-              <p>{questionCount + 1}.</p>
-              <p>{questions[questionCount].question}</p>
+          <div className="quiz__question-container">
+            <div className="quiz__main-question-container">
+              <p className="quiz__question-number">{questionCount + 1}.</p>
+              <p className="quiz__question">
+                {questions[questionCount].question}
+              </p>
             </div>
             {Object.entries(questions[questionCount].parts)
               .sort(([keyA], [keyB]) => keyA.localeCompare(keyB))
               .map(([key, value], index) => (
                 <div key={index}>
-                  <p>{key}</p>
-                  <p>{value}</p>
+                  <div className="quiz__question-part-container">
+                    <p className="quiz__question-number">{key}.</p>
+                    <p className="quiz__question">{value}</p>
+                  </div>
                   {questions[questionCount].questionType === "Single Answer" ? (
                     <>
                       <input
+                        className="quiz__input"
                         type="text"
                         placeholder={
                           questions[questionCount].answerPlaceholders[key]
@@ -99,6 +104,7 @@ function Quiz() {
                         value={userAnswers[key] || ""}
                       />
                       <button
+                        className="quiz__submit-button"
                         onClick={() => checkAnswer(userAnswers[key], key)}
                       >
                         Submit

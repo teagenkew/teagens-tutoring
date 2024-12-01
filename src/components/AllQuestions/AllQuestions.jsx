@@ -2,6 +2,7 @@ import "./AllQuestions.scss";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Loading from "../Loading/Loading";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 function AllQuestions({ color }) {
@@ -51,7 +52,9 @@ function AllQuestions({ color }) {
         question.topic.toLowerCase() === topic.toLowerCase();
       const matchesKeywords =
         selectedKeywords.length === 0 ||
-        selectedKeywords.every((keyword) => question.keywords.includes(keyword));
+        selectedKeywords.every((keyword) =>
+          question.keywords.includes(keyword)
+        );
 
       return matchesSubjectAndTopic && matchesKeywords;
     });
@@ -59,46 +62,52 @@ function AllQuestions({ color }) {
   }, [subject, topic, allQuestions, selectedKeywords]);
 
   return (
-    <div className="all-q__container">
-      <h2 className="all-q__title"> All Questions</h2>
-      <div className="all-q__tags-container">
-        {keywords.map((keyword, index) => {
-          return (
-            <div
-              key={index}
-              className={`all-q__tag ${
-                selectedKeywords.includes(keyword)
-                  ? `all-q__tag--selected-${color}`
-                  : `all-q__tag--${color}`
-              }`}
-              onClick={() => handleTagClick(keyword)}
-            >
-              {keyword}
-            </div>
-          );
-        })}
-      </div>
-      <div className="all-q__questons-container">
-        <ul className="all-q__list">
-          {filteredQuestions.map((question) => {
-            return (
-              <li key={question.id} className="all-q__list-item">
-                {question.question}
-                <div>
-                  {Object.entries(question.parts)
-                    .sort(([keyA], [keyB]) => keyA.localeCompare(keyB))
-                    .map(([key, part]) => (
-                      <div key={key} className="part">
-                        <span className="part-key">{key})</span> {part}
-                      </div>
-                    ))}
+    <>
+      {allQuestions ? (
+        <Loading />
+      ) : (
+        <div className="all-q__container">
+          <h2 className="all-q__title"> All Questions</h2>
+          <div className="all-q__tags-container">
+            {keywords.map((keyword, index) => {
+              return (
+                <div
+                  key={index}
+                  className={`all-q__tag ${
+                    selectedKeywords.includes(keyword)
+                      ? `all-q__tag--selected-${color}`
+                      : `all-q__tag--${color}`
+                  }`}
+                  onClick={() => handleTagClick(keyword)}
+                >
+                  {keyword}
                 </div>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </div>
+              );
+            })}
+          </div>
+          <div className="all-q__questons-container">
+            <ul className="all-q__list">
+              {filteredQuestions.map((question) => {
+                return (
+                  <li key={question.id} className="all-q__list-item">
+                    {question.question}
+                    <div>
+                      {Object.entries(question.parts)
+                        .sort(([keyA], [keyB]) => keyA.localeCompare(keyB))
+                        .map(([key, part]) => (
+                          <div key={key} className="part">
+                            <span className="part-key">{key})</span> {part}
+                          </div>
+                        ))}
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
