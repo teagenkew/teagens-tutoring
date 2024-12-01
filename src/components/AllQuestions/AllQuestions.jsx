@@ -10,6 +10,7 @@ function AllQuestions({ color }) {
   const [allQuestions, setAllQuestions] = useState([]);
   const [selectedKeywords, setSelectedKeywords] = useState([]);
   const [filteredQuestions, setFilteredQuestions] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const { subject, topic } = useParams();
 
   const getQuestions = async () => {
@@ -37,6 +38,7 @@ function AllQuestions({ color }) {
         setKeywords(keywordsData); // Update keywords state
         const questionsData = await getQuestions();
         setAllQuestions(questionsData);
+        setIsLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -63,7 +65,7 @@ function AllQuestions({ color }) {
 
   return (
     <>
-      {allQuestions ? (
+      {isLoading ? (
         <Loading />
       ) : (
         <div className="all-q__container">
