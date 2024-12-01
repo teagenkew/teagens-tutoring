@@ -11,7 +11,7 @@
       @include background-card-style($Coral);
     }
     &--circuits {
-      @include background-card-style($Clementine);
+      @include background-card-style($Sage);
     }
     &--compositeFunctions {
       @include background-card-style($Lilac);
@@ -20,7 +20,7 @@
       @include background-card-style($Coral);
     }
     &--trigonometry {
-      @include background-card-style($Clementine);
+      @include background-card-style($Sage);
     }
   }
 
@@ -46,7 +46,7 @@
       @include card-style($Coral);
     }
     &--circuits {
-      @include card-style($Clementine);
+      @include card-style($Sage);
     }
     &--compositeFunctions {
       @include card-style($Lilac);
@@ -55,7 +55,7 @@
       @include card-style($Coral);
     }
     &--trigonometry {
-      @include card-style($Clementine);
+      @include card-style($Sage);
     }
   }
 

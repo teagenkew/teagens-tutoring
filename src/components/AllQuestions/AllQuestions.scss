@@ -32,6 +32,10 @@
       background-color: $Lilac;
       color: $Plum;
     }
+    &--green {
+      background-color: $Sage;
+      color: $Black;
+    }
     &--selected-purple {
       background-color: $Plum;
       color: $Lilac;
@@ -42,6 +46,10 @@
     }
     &--selected-orange {
       background-color: $Sunset;
+      color: $Stone;
+    }
+    &--selected-green {
+      background-color: $Forest;
       color: $Stone;
     }
   }

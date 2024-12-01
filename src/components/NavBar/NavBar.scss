@@ -17,6 +17,9 @@
   &--orange {
     background-color: $Sunset;
   }
+  &--green {
+    background-color: $Forest;
+  }
 }
 
 .icon {
@@ -36,6 +39,9 @@
   }
   &--orange {
     background-color: $Clementine;
+  }
+  &--green {
+    background-color: rgba($Sage, 0.9);
   }
   &--physics {
     background-image: url("../../assets/physics-icon.svg");

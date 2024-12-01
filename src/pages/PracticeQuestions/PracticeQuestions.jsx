@@ -14,7 +14,7 @@ function PracticeQuestions() {
   } else if (topic === "forces" || topic === "commonGraphs") {
     color = "red";
   } else if (topic === "circuits" || topic === "trigonometry") {
-    color = "orange";
+    color = "green";
   }
   return (
     <>
@@ -22,7 +22,7 @@ function PracticeQuestions() {
       <div className="practice-question__container">
         <NavBar color={color} />
         <QuizList />
-        
+
         <AllQuestions color={color} />
       </div>
     </>
