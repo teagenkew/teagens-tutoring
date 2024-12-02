@@ -1,0 +1,7 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.practice-question__container {
+  @include background-card-style($Stone);
+  padding: 1rem 1.5rem;
+}

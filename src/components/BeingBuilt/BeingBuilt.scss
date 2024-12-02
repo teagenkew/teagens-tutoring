@@ -1,0 +1,16 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.being-built {
+  @include flex-center-column;
+  &__title {
+    @include heading-one;
+  }
+  &__image {
+    width: 18rem;
+    align-self: center;
+  }
+  &__text {
+    font-size: 1.25rem;
+  }
+}

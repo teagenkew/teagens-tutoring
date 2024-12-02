@@ -1,0 +1,14 @@
+@use "../../../styles/mixins" as *;
+@use "../../../styles/variables" as *;
+
+.projectile-notes {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &__title {
+    @include heading-two;
+  }
+  &__body {
+    @include body-text;
+  }
+}

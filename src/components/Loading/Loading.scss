@@ -1,0 +1,53 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.loader {
+  display: inline-flex;
+  justify-content: center;
+  gap: 10px;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  height: 20px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid black;
+  background: radial-gradient(farthest-side, #000 95%, #0000) 35% 35%/6px 6px
+    no-repeat #fff;
+  animation: eyes 3s infinite;
+}
+@keyframes eyes {
+  0%,
+  11% {
+    background-position: 35% 35%;
+  }
+  14%,
+  36% {
+    background-position: 65% 35%;
+  }
+  38%,
+  61% {
+    background-position: 65% 65%;
+  }
+  64%,
+  86% {
+    background-position: 35% 65%;
+  }
+  88%,
+  100% {
+    background-position: 35% 35%;
+  }
+}
+
+.loading {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+  &__text {
+    @include heading-two;
+    padding-left: 1rem;
+  }
+}

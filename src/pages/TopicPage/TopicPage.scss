@@ -1,0 +1,71 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+.topic-page {
+  &__container {
+    @include background-card-style($Stone2);
+    justify-content: flex-start;
+    &--kinematics {
+      @include background-card-style($Lilac);
+    }
+    &--forces {
+      @include background-card-style($Coral);
+    }
+    &--circuits {
+      @include background-card-style($Sage);
+    }
+    &--compositeFunctions {
+      @include background-card-style($Lilac);
+    }
+    &--commonGraphs {
+      @include background-card-style($Coral);
+    }
+    &--trigonometry {
+      @include background-card-style($Sage);
+    }
+  }
+
+  &__title {
+    @include heading-one;
+    font-weight: 600;
+  }
+
+  &__notes-container,
+  &__pq-container {
+    @include card-style($Stone2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+    margin-bottom: 2rem;
+    height: 30vh;
+    &--kinematics {
+      @include card-style($Lilac);
+    }
+    &--forces {
+      @include card-style($Coral);
+    }
+    &--circuits {
+      @include card-style($Sage);
+    }
+    &--compositeFunctions {
+      @include card-style($Lilac);
+    }
+    &--commonGraphs {
+      @include card-style($Coral);
+    }
+    &--trigonometry {
+      @include card-style($Sage);
+    }
+  }
+
+  &__notes-title,
+  &__pq-title {
+    @include heading-three;
+    font-weight: 600;
+    padding-top: 0.5rem;
+  }
+  &__image {
+    width: 9.375rem;
+  }
+}

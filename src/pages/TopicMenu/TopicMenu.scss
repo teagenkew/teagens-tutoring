@@ -1,0 +1,45 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.topic-menu {
+  &__title {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  &__container {
+    @include background-card-style($Stone2);
+    z-index: 1;
+    margin-top: -1.875rem;
+  }
+}
+.topic-container:nth-child(1) {
+  @include card-style($Lilac);
+}
+.topic-container:nth-child(2) {
+  @include card-style($Coral);
+}
+.topic-container:nth-child(3) {
+  @include card-style($Sage);
+}
+
+.topic-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 1rem 1rem 1rem;
+}
+.topic-list {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.topic {
+  padding: 1rem;
+  font-weight: 500;
+  font-size: 20px;
+}

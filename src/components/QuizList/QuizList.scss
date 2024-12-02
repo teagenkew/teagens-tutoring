@@ -1,0 +1,19 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.quiz-list {
+  width: 100%;
+  &__title {
+    @include heading-one;
+    margin: 1rem 0;
+  }
+  &__list {
+    list-style-type: decimal-leading-zero;
+  }
+  &__list-item {
+    border-bottom: 1px solid $Black;
+    padding: 0.5rem 0;
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+}
