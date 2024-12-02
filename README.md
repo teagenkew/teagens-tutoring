@@ -34,7 +34,7 @@ Highschool physics and math students will use this website to learn.
   - react
   - react-router
   - axios
-  - mathjax
+  - katex 
 - Server libraries:
   - knex
   - express

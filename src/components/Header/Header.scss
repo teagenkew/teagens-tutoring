@@ -1,0 +1,70 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.nav {
+  background-color: $Stone;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 28vh;
+  @include desktop {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 15vh;
+  }
+  &--blue {
+    background-color: $Sky;
+  }
+  &--purple {
+    background-color: $Lilac;
+  }
+  &--orange {
+    background-color: $Clementine;
+  }
+
+  &__logo {
+    width: 19.375rem;
+  }
+  &__logo-link {
+    width: 90%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include desktop {
+      justify-content: flex-start;
+      width: auto;
+      margin-right: 2rem;
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    width: 80%;
+    align-self: flex-end;
+    justify-content: center;
+    gap: 0.8rem;
+    @include desktop {
+      align-self: center;
+      justify-content: flex-start;
+    }
+  }
+  &__button {
+    border: 2px solid $Black;
+    padding: 0.5rem 0.5rem;
+    border-radius: 27px;
+    transition: all 0.1s ease;
+    &:active {
+      background-color: $Black;
+      color: $Stone;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $Black;
+  font-size: 18px;
+  font-weight: 600;
+}

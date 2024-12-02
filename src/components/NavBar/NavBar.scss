@@ -1,0 +1,58 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.nav-bar {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 15px;
+  border: 2px solid $Black;
+  &--purple {
+    background-color: $Plum;
+  }
+  &--red {
+    background-color: $DarkRed;
+  }
+  &--orange {
+    background-color: $Sunset;
+  }
+  &--green {
+    background-color: $Forest;
+  }
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  background-position: center;
+  border-radius: 50%;
+  border: 1px solid $Black;
+
+  &--purple {
+    background-color: $Lilac;
+  }
+  &--red {
+    background-color: $Coral;
+  }
+  &--orange {
+    background-color: $Clementine;
+  }
+  &--green {
+    background-color: rgba($Sage, 0.9);
+  }
+  &--physics {
+    background-image: url("../../assets/physics-icon.svg");
+  }
+  &--math {
+    background-image: url("../../assets/math-icon.svg");
+  }
+  &--book {
+    background-image: url("../../assets/book-icon.png");
+  }
+  &--about {
+    background-image: url("../../assets/about-icon.png");
+  }
+}

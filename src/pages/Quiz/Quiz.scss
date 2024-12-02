@@ -1,0 +1,76 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.quiz {
+  &__container {
+    @include background-card-style($Stone);
+    & {
+      padding: 1rem;
+    }
+  }
+  &__question-container {
+    padding: 0 1rem;
+  }
+  &__main-question-container {
+    display: flex;
+  }
+  &__question {
+    @include body-text;
+    margin-top: 1rem;
+  }
+  &__question-number {
+    font-weight: 700;
+    margin-right: 0.625rem;
+  }
+  &__input {
+    width: 90%;
+    height: 2.5rem;
+    font-style: italic;
+    font-size: 14px;
+    background-color: $Lilac-20;
+    border-radius: 10px;
+    border: 2px solid $Plum;
+    padding-left: 5px;
+    &:focus {
+      outline: 2px solid $Lilac;
+    }
+  }
+  &__question-part-container {
+    display: flex;
+  }
+  &__submit-button {
+    width: 8rem;
+    height: 2.875rem;
+    margin: 1rem 0;
+    border-radius: 20px;
+    background-color: $Plum;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: $Stone;
+    border: none;
+    box-shadow: -4px 4px $Black;
+    transition: all 0.2s ease; // Smooth transition effect
+    &:active {
+      box-shadow: 0 0 0 $Black; // Removes the shadow
+      transform: translate(-4px, 4px);
+    }
+  }
+
+  &__next-button {
+    @extend .quiz__submit-button;
+    background-color: $Lilac;
+    color: $Plum;
+    height: 2rem;
+    width: 6rem;
+    text-transform: lowercase;
+  }
+  &__submission-container {
+    @include flex-center-column;
+  }
+  &__feedback {
+    @include body-text;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    color: $Plum;
+  }
+}

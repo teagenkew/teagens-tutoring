@@ -1,0 +1,69 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.all-q {
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  &__questions-container {
+    margin: 0;
+    padding: 0;
+  }
+  &__tag {
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+
+    &--red {
+      background-color: $Coral;
+      color: $Black;
+    }
+    &--orange {
+      background-color: $Clementine;
+      color: $Black;
+    }
+    &--purple {
+      background-color: $Lilac;
+      color: $Plum;
+    }
+    &--green {
+      background-color: $Sage;
+      color: $Black;
+    }
+    &--selected-purple {
+      background-color: $Plum;
+      color: $Lilac;
+    }
+    &--selected-red {
+      background-color: $DarkRed;
+      color: $Stone;
+    }
+    &--selected-orange {
+      background-color: $Sunset;
+      color: $Stone;
+    }
+    &--selected-green {
+      background-color: $Forest;
+      color: $Stone;
+    }
+  }
+  &__title {
+    @include heading-one;
+    margin: 1rem 0 0.5rem 0;
+  }
+  &__list {
+    list-style: decimal;
+    padding: 0 1rem;
+  }
+  &__list-item {
+    border-bottom: 1px solid $Black;
+    padding: 0.5rem 0;
+    font-size: 0.75rem;
+  }
+}
