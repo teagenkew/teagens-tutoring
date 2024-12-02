@@ -135,61 +135,79 @@ After clicking "practice questions" on Topic Menu
 
 ### Endpoints
 
-- ###### GET quizzes/questions/:unit
+- ###### GET keywords/
+    - lists all keywords
+    - [
+    "vectors",
+    "displacement",
+    "magnitude",
+    "relative-motion",
+    "ground-speed",
+    "angle",
+    "projectile-motion"
+]
+- ###### GET keywords/:subject/:unit
+    - lists all keywords for a given topic in a subject
+    - [
+    "vectors",
+    "displacement",
+    "magnitude",
+    "relative-motion",
+    "ground-speed"
+      ]
+ 
+- ##### GET questions/
+    - lists all questions
+    - [{
+        "id": 1,
+        "subject": "Physics",
+        "topic": "Kinematics",
+        "questionType": "Single Answer",
+        "question": "A child walks 3 meters east and then 4 meters north. Represent their total displacement as a vector and calculate its magnitude.",
+        "keywords": [
+            "vectors",
+            "displacement",
+            "magnitude"
+        ],
+        "parts": {
+            "a": "Represent their total displacement as a vector."
+        },
+        "answerPlaceholders": {
+            "a": "ex: a, b"
+        },
+        "answers": {
+            "a": "3, 4"
+        }
+    }, {etc. }
+]
 
-  - Gets all questions
+- ###### GET quizzes/questions/:keyword
+
+  - Gets all questions associated with this keyword
   - [ {
-    "question id " : "id "
-    "question type" : "multiple choice"
-    "question keywords" : ["keyword 1", "keyword 2"]
-    "question" : "sample question"
-    "question parts" : [
-    {
-    "part id" : "1",
-    "part text" : "answer this part of the question like this",
-    "question answers" : ["3m", "5m", "10m", "20m"]
-    "correct answser": "5m"
-    }
-    {
-    "part id" : "2",
-    "part text" : "now answer this part of the question like this",
-    "question answers" : ["A", "B", "C", "D"]
-    "correct answser": "D"
-    }
-    ],
-
-    }
+        "id": 1,
+        "subject": "Physics", 
+        "topic": "Kinematics",
+        "questionType": "Single Answer",
+        "question": "A child walks 3 meters east and then 4 meters north. Represent their total displacement as a vector and calculate its magnitude.",
+        "keywords": [
+            "vectors"
+        ],
+        "parts": {
+            "a": "Represent their total displacement as a vector."
+        },
+        "answerPlaceholders": {
+            "a": "ex: a, b"
+        },
+        "answers": {
+            "a": "3, 4"
+        }
+    },
     {
     etc. etc.
     } ]
 
-- ###### GET quizzes/questions/:keyword
-
-  - Gets questions associated with a keyword
-    - [ {
-      "question id " : "id "
-      "question type" : "single answer"
-      "question" : "sample question"
-      "question parts" : [
-      {
-      "part id" : "1",
-      "part text" : "answer this part of the question like this",
-      "question answers" : ["3m", "5m", "10m", "20m"]
-      "correct answser": "5m"
-      }
-      {
-      "part id" : "2",
-      "part text" : "now answer this part of the question like this",
-      "question answers" : ["A", "B", "C", "D"]
-      "correct answser": "D"
-      }
-      ],
-      },
-      {
-      etc. etc.
-      } ]
-
-- ###### GET notes/:unit/:topic/comments
+- ###### GET comments/:topic
 
   - Gets all comments for a topic
   - Example response:
@@ -212,7 +230,7 @@ After clicking "practice questions" on Topic Menu
     }
     ]
 
-- ###### POST notes/:unit/:topic/comments
+- ###### POST comments/:topic
 
   - Posts a comment for a topic
   - Example response:
@@ -230,14 +248,6 @@ After clicking "practice questions" on Topic Menu
       "comment": "This explanation on vector addition for displacement makes sense. I think I understand how to approach the problem now!"
       }
 
-- ###### DELETE notes/:unit/:topic/comment/:id
-  - Deletes a comment by comment ID
-    - Example Response:
-      - {
-  "status": "success",
-  "message": "Comment deleted successfully.",
-  "deleted_comment_id": "4"
-  }
 
 ## Roadmap
 
@@ -299,8 +309,6 @@ After clicking "practice questions" on Topic Menu
 
 - Site wide animations / transitions
 
-- Deployment
-
 - Debugging/Testing
 
 - Present!!
@@ -315,3 +323,13 @@ After clicking "practice questions" on Topic Menu
   - Save quiz progress and results
   - Only I can delete comments
   - Users can edit their own comments only
+- ###### DELETE notes/:unit/:topic/comment/:id
+  - Deletes a comment by comment ID
+    - Example Response:
+      - {
+  "status": "success",
+  "message": "Comment deleted successfully.",
+  "deleted_comment_id": "4"
+  }
+
+- Deployment
