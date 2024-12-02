@@ -18,7 +18,9 @@ function AllQuestions({ color }) {
     return questions.data;
   };
   const getKeywords = async () => {
-    const keywords = await axios.get(`${BASE_URL}/keywords`);
+    const keywords = await axios.get(
+      `${BASE_URL}/keywords/${subject}/${topic}`
+    );
     return keywords.data;
   };
 
@@ -35,7 +37,7 @@ function AllQuestions({ color }) {
     const fetchData = async () => {
       try {
         const keywordsData = await getKeywords();
-        setKeywords(keywordsData); // Update keywords state
+        setKeywords(keywordsData);
         const questionsData = await getQuestions();
         setAllQuestions(questionsData);
         setIsLoading(false);
@@ -71,21 +73,27 @@ function AllQuestions({ color }) {
         <div className="all-q__container">
           <h2 className="all-q__title"> All Questions</h2>
           <div className="all-q__tags-container">
-            {keywords.map((keyword, index) => {
-              return (
-                <div
-                  key={index}
-                  className={`all-q__tag ${
-                    selectedKeywords.includes(keyword)
-                      ? `all-q__tag--selected-${color}`
-                      : `all-q__tag--${color}`
-                  }`}
-                  onClick={() => handleTagClick(keyword)}
-                >
-                  {keyword}
-                </div>
-              );
-            })}
+            {keywords.length > 0 ? (
+              keywords.map((keyword, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={`all-q__tag ${
+                      selectedKeywords.includes(keyword)
+                        ? `all-q__tag--selected-${color}`
+                        : `all-q__tag--${color}`
+                    }`}
+                    onClick={() => handleTagClick(keyword)}
+                  >
+                    {keyword}
+                  </div>
+                );
+              })
+            ) : (
+              <div className="no-questions-available">
+                No questions available yet
+              </div>
+            )}
           </div>
           <div className="all-q__questons-container">
             <ul className="all-q__list">

@@ -9,7 +9,16 @@
   }
   &__list {
     list-style-type: decimal-leading-zero;
+
   }
+  &__list:has(> .quiz-list__no-quizzes) {
+    list-style-type: decimal-leading-zero;
+    padding-left: 0;
+    & > .quiz-list__no-quizzes {
+      @include body-text;
+    }
+  }
+
   &__list-item {
     border-bottom: 1px solid $Black;
     padding: 0.5rem 0;

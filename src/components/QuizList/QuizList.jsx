@@ -40,17 +40,23 @@ function QuizList() {
     <div className="quiz-list">
       <h2 className="quiz-list__title">Quizzes</h2>
       <ol className="quiz-list__list">
-        {quizzes.map((quiz, index) => {
-          return (
-            <li
-              key={index}
-              className="quiz-list__list-item"
-              onClick={() => handleClick(quiz)}
-            >
-              {transformStringForDisplay(quiz)}
-            </li>
-          );
-        })}
+        {quizzes.length > 0 ? (
+          quizzes.map((quiz, index) => {
+            return (
+              <li
+                key={index}
+                className="quiz-list__list-item"
+                onClick={() => handleClick(quiz)}
+              >
+                {transformStringForDisplay(quiz)}
+              </li>
+            );
+          })
+        ) : (
+          <div className="quiz-list__no-quizzes">
+            Hang tight! No quizzes yet
+          </div>
+        )}
       </ol>
     </div>
   );
