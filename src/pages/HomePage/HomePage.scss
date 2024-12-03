@@ -20,6 +20,7 @@ body {
     margin-top: 0;
     height: auto;
     border-radius: 20px;
+    position: relative;
   }
 }
 
@@ -36,6 +37,12 @@ body {
   background-image: url("../../assets/physics-home.png");
   background-position-x: -20px;
   background-size: 180px;
+  @include desktop {
+    position: absolute;
+    z-index: 2;
+    top: 4.2rem;
+    left: 9rem;
+  }
 }
 
 .math {
@@ -44,7 +51,11 @@ body {
   background-position-x: -20px;
   background-size: 200px;
   @include desktop {
-    background-position-y: 5rem;
+    background-position-y: 2rem;
+    z-index: 1;
+    position: absolute; // Layer the cards on top of each other
+    top: 8rem;
+    left: 18rem;
   }
 }
 
@@ -59,10 +70,18 @@ body {
   align-items: flex-end;
   background-repeat: no-repeat;
   @include desktop {
-    height: 25rem;
-    width: 25rem;
+    height: 20rem;
+    width: 30rem;
     background-size: 18rem;
     justify-content: flex-start;
+    padding: 2.5rem 2rem;
+    transition: transform 0.3s ease, z-index 0.3s ease; // Smooth transition for hover effects
+    transform: scale(1); // Default scale
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.03); // Enlarge the hovered card
+      z-index: 10; // Bring the hovered card to the front
+    }
   }
 }
 
@@ -96,7 +115,7 @@ body {
     font-size: 1.75rem;
     margin: 1rem 0;
     font-weight: 700;
-    @include desktop{
+    @include desktop {
       font-size: 36px;
     }
   }
