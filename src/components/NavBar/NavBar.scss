@@ -20,6 +20,13 @@
   &--green {
     background-color: $Forest;
   }
+  &--pink {
+    background-color: $Bubblegum;
+  }
+  @include desktop {
+    flex-direction: column;
+    width: auto;
+  }
 }
 
 .icon {
@@ -50,6 +57,9 @@
   }
   &--green {
     background-color: rgba($Sage, 0.9);
+  }
+  &--pink {
+    background-color: $Barbie;
   }
   &--physics {
     background-image: url("../../assets/physics-icon.svg");

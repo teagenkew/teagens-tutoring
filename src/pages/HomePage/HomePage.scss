@@ -4,9 +4,31 @@
 body {
   background-color: $Stone;
 }
+
+.homepage {
+  @include desktop {
+    display: flex;
+    padding: 0 8rem 3rem 8rem;
+    justify-content: space-between;
+  }
+}
 .main-container {
   @include background-card-style($Stone2);
   justify-content: space-evenly;
+  @include desktop {
+    flex-direction: row;
+    margin-top: 0;
+    height: auto;
+    border-radius: 20px;
+  }
+}
+
+.homepage__nav-container {
+  display: none; // Hide the nav container by default
+
+  @include desktop {
+    display: flex;
+  }
 }
 
 .physics {
@@ -22,6 +44,11 @@ body {
   background-position-x: -20px;
   background-size: 180px;
   background-repeat: no-repeat;
+  @include desktop {
+    height: 25rem;
+    width: 25rem;
+    background-size: 400px;
+  }
 }
 
 .math {
@@ -37,6 +64,11 @@ body {
   background-position-x: -20px;
   background-size: 200px;
   background-repeat: no-repeat;
+  @include desktop {
+    height: 25rem;
+    width: 25rem;
+    background-size: 400px;
+  }
 }
 
 .card {
@@ -52,9 +84,11 @@ body {
   }
   &__physics-icon {
     background-image: url("../../assets/physics-icon.svg");
+    border: 2px solid $ElectricBlue
   }
   &__math-icon {
     background-image: url("../../assets/math-icon.svg");
+    border: 2px solid $Sunset;
   }
   &__title {
     font-size: 1.75rem;
