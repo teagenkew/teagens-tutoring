@@ -9,7 +9,7 @@
   border-radius: 15px;
   border: 2px solid $Black;
   &--purple {
-    background-color: $Plum;
+    background: linear-gradient(290deg, lighten($Plum, 10%), $Plum);
   }
   &--red {
     background-color: $DarkRed;
@@ -30,6 +30,8 @@
   background-position: center;
   border-radius: 50%;
   border: 1px solid $Black;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.2);
   transition: transform 0.3s ease, background-color 0.3s ease;
 
   &:hover {
