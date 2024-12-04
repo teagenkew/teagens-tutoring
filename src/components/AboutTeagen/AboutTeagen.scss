@@ -1,0 +1,46 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.about-teagen {
+  &__container {
+    @include background-card-style($Forest);
+    & {
+      justify-content: flex-start;
+    }
+    @include desktop {
+      height: fit-content;
+      border-radius: 20px;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 0 4rem;
+    }
+  }
+  &__content-container {
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      padding-bottom:1rem;
+    }
+  }
+  &__title {
+    @include heading-one;
+    color: $Stone;
+    @include desktop {
+      margin-bottom: 0.5rem;
+    }
+  }
+  &__paragraph {
+    font-size: 16px;
+    line-height: 20px;
+    color: $Stone;
+    margin: 0;
+  }
+  &__paragraph-container {
+    padding: 1rem 2rem;
+    @include desktop {
+      padding: 0;
+      align-self: center;
+    }
+  }
+}

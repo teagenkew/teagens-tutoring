@@ -26,11 +26,8 @@ function NewComment({ refetchComments, topic }) {
         username: formData.username,
         comment: formData.comment,
       };
-      console.log(commentBody);
       const sendComment = await axios.post(`${BASE_URL}/comments`, commentBody);
       refetchComments();
-      console.log(sendComment.data);
-
       setFormData({
         username: "",
         comment: "",

@@ -1,5 +1,6 @@
 import "./App.scss";
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import HomePage from "./pages/HomePage/HomePage";
 import About from "./pages/About/About";
 import TopicMenu from "./pages/TopicMenu/TopicMenu";
@@ -11,9 +12,24 @@ import Quiz from "./pages/Quiz/Quiz";
 import UnderConstruction from "./pages/UnderConstruction/UnderConstruction";
 
 function App() {
+  const location = useLocation();
+  const [currentPage, setCurrentPage] = useState(location.pathname);
+  const [transitioning, setTransitioning] = useState(false);
+
+  useEffect(() => {
+    if (location.pathname !== currentPage) {
+      setTransitioning(true);
+      setTimeout(() => {
+        setCurrentPage(location.pathname);
+        setTransitioning(false);
+      }, 200); 
+    }
+  }, [location.pathname, currentPage]);
   return (
     <>
-      <BrowserRouter>
+      <div
+        className={`page-container ${transitioning ? "fade-out" : "fade-in"}`}
+      >
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
@@ -34,7 +50,7 @@ function App() {
           />
           <Route path="/:subject/topics/:topic/:unitQuiz" element={<Quiz />} />
         </Routes>
-      </BrowserRouter>
+      </div>
     </>
   );
 }

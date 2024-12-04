@@ -11,6 +11,9 @@
     background-color: $Stone2;
     border-radius: 20px;
     border: 1px solid $Black;
+    @include desktop {
+      width: 75%;
+    }
   }
   &__title {
     @include heading-two;
@@ -29,6 +32,9 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    @include desktop{
+      width:75%;
+    }
   }
   &__username,
   &__comment {
@@ -38,6 +44,9 @@
     margin-bottom: 0.625rem;
     font-style: italic;
     font-size: 12px;
+    @include desktop{
+      font-size:14px;
+    }
     &:focus,
     &:focus-visible {
       outline: 1px solid $Plum;

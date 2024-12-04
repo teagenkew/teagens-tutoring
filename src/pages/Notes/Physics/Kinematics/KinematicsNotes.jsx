@@ -29,7 +29,6 @@ function KinematicsNotes() {
     fetchComments();
   }, [topic]);
 
-  // Trigger a refetch of comments
   const refetchComments = () => {
     getComments(topic);
   };
@@ -38,9 +37,9 @@ function KinematicsNotes() {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <div>
+    <div className="kinematics-notes">
       <Header color="purple" />
-      <div className="kinematics-notes">
+      <div className="kinematics-notes__container">
         <h1 className="kinematics-notes__title">Kinematics</h1>
         <nav className="kinematics-notes__nav">
           <button

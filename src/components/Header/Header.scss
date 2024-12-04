@@ -11,7 +11,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    height: 15vh;
+    height: 150px;
   }
   &--blue {
     background-color: $Sky;
@@ -55,9 +55,11 @@
     padding: 0.5rem 0.5rem;
     border-radius: 27px;
     transition: all 0.1s ease;
-    &:active {
+    &:active,
+    &:hover {
       background-color: $Black;
       color: $Stone;
+      cursor: pointer;
     }
   }
 }

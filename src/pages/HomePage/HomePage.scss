@@ -4,61 +4,131 @@
 body {
   background-color: $Stone;
 }
+
+.homepage {
+  @include desktop {
+    display: flex;
+    padding: 0 8rem 3rem 8rem;
+    justify-content: space-between;
+  }
+  &__about-container {
+    display: none;
+    @include desktop {
+      display: block;
+      width: 70vw;
+    }
+  }
+}
 .main-container {
   @include background-card-style($Stone2);
-  justify-content: space-evenly;
+  & {
+    justify-content: space-evenly;
+  }
+  @include desktop {
+    flex-direction: row;
+    margin-top: 0;
+    height: 28.125rem;
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 3rem;
+    width: 70vw;
+  }
+}
+
+.homepage__nav-container {
+  display: none; // Hide the nav container by default
+
+  @include desktop {
+    display: flex;
+    margin-top: 9.375rem;
+  }
 }
 
 .physics {
+  @include card-style($Sky);
+  background-image: url("../../assets/physics-home.png");
+  background-position-x: -20px;
+  background-size: 180px;
+  @include desktop {
+    position: absolute;
+    z-index: 2;
+    top: 2rem;
+    left: 12rem;
+  }
+}
+
+.math {
+  @include card-style($Clementine);
+  background-image: url("../../assets/math-home.png");
+  background-position-x: -20px;
+  background-size: 200px;
+  @include desktop {
+    background-position-y: 2rem;
+    z-index: 1;
+    position: absolute; // Layer the cards on top of each other
+    top: 5rem;
+    left: 21rem;
+  }
+}
+
+.physics,
+.math {
   height: 170px;
   width: 80%;
-  @include card-style($Sky);
   padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
   align-items: flex-end;
-  background-image: url("../../assets/physics-home.png");
-  background-position-x: -20px;
-  background-size: 180px;
   background-repeat: no-repeat;
-}
-
-.math {
-  height: 170px;
-  width: 80%;
-  padding: 1rem;
-  @include card-style($Clementine);
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-  align-items: flex-end;
-  background-image: url("../../assets/math-home.png");
-  background-position-x: -20px;
-  background-size: 200px;
-  background-repeat: no-repeat;
+  @include desktop {
+    height: 20rem;
+    width: 30rem;
+    background-size: 18rem;
+    justify-content: flex-start;
+    padding: 2.5rem 2rem;
+    transition: transform 0.3s ease, z-index 0.3s ease; // Smooth transition for hover effects
+    transform: scale(1); // Default scale
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.03); // Enlarge the hovered card
+      z-index: 10; // Bring the hovered card to the front
+    }
+  }
 }
 
 .card {
   &__physics-icon,
   &__math-icon {
-    background-color: $Stone;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 40px 40px;
+    background-size: 2.5rem 2.5rem;
+    @include desktop {
+      width: 4.375rem;
+      height: 4.375rem;
+      background-size: 3.125rem 3.125rem;
+      border-radius: 50%;
+    }
   }
   &__physics-icon {
     background-image: url("../../assets/physics-icon.svg");
+    border: 2px solid $ElectricBlue;
+    background-color: $ElectricBlue;
   }
   &__math-icon {
     background-image: url("../../assets/math-icon.svg");
+    background-color: $Sunset;
+    border: 2px solid $Sunset;
   }
   &__title {
     font-size: 1.75rem;
-    margin-top: 1rem;
+    margin: 1rem 0;
     font-weight: 700;
+    @include desktop {
+      font-size: 36px;
+    }
   }
 }

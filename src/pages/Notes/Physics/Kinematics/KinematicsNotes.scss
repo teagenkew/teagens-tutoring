@@ -2,8 +2,22 @@
 @use "../../../../styles/variables" as *;
 
 .kinematics-notes {
-  @include background-card-style($Stone);
-  padding: 1rem;
+  @include desktop {
+    background-color: $Lilac;
+    display: flex;
+    flex-direction: column;
+  }
+  &__container {
+    @include background-card-style($Stone);
+    & {
+      padding: 1rem;
+    }
+
+    @include desktop {
+      width: 51rem;
+      align-self: center;
+    }
+  }
 
   &__title {
     @include heading-one;
@@ -14,6 +28,10 @@
     width: 75%;
     flex-direction: row;
     justify-content: space-around;
+    @include desktop {
+      justify-content: center;
+      gap: 1rem;
+    }
   }
   &__button {
     background-color: $Plum;
@@ -21,9 +39,18 @@
     padding: 0.5rem;
     border: none;
     border-radius: 15px;
+    &:hover {
+      cursor: pointer;
+      background-color: $Lilac;
+      color: black;
+      outline: 1px solid $Plum;
+    }
   }
   &__container-one,
   &__container-two {
     padding: 2rem 0;
+    @include desktop {
+      width: 75%;
+    }
   }
 }

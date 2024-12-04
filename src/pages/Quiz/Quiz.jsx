@@ -72,10 +72,15 @@ function Quiz() {
   };
 
   return (
-    <>
+    <div className="quiz">
       <QuizHeader topic={topic} unit={unit} width={questionCount * 10 + 10} />
       <div className="quiz__container">
-        <NavBar color="purple" />
+        <div className="quiz__nav-desktop">
+          <NavBar color="purple" direction="column" />
+        </div>
+        <div className="quiz__nav-mobile">
+          <NavBar color="purple" direction="row" />
+        </div>
         {!questions[questionCount] ? (
           <div>Loading...</div>
         ) : (
@@ -115,7 +120,8 @@ function Quiz() {
                       (isAnswerCorrect ? (
                         <>
                           <p className="quiz__feedback">
-                            <strong>Correct!</strong> Move onto the next question?{" "}
+                            <strong>Correct!</strong> Move onto the next
+                            question?{" "}
                           </p>
                           <button
                             className="quiz__next-button"
@@ -144,7 +150,7 @@ function Quiz() {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
 

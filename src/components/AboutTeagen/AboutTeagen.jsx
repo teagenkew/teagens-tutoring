@@ -1,15 +1,13 @@
 import aboutTeagen from "../../assets/about-teagen.png";
-import HeaderAbout from "../../components/HeaderAbout/HeaderAbout";
-import "./About.scss";
-function About() {
+import "./AboutTeagen.scss";
+function AboutTeagen() {
   return (
-    <div className="about">
-      <HeaderAbout />
-      <div className="about__container">
-        <h1 className="about__title">About</h1>
-        <img src={aboutTeagen}></img>
-        <div className="about__paragraph-container">
-          <p className="about__paragraph">
+    <div className="about-teagen__container">
+      <img src={aboutTeagen}></img>
+      <div className="about-teagen__content-container">
+        <h1 className="about-teagen__title">About</h1>
+        <div className="about-teagen__paragraph-container">
+          <p className="about-teagen__paragraph">
             Teagen has been a dedicated tutor for over ten years, specializing
             in physics and math. With a Master’s degree in Physics from Western
             University and a double major in Mathematics and Physics from Acadia
@@ -19,14 +17,9 @@ function About() {
             confidence, and develop a genuine love for the subject.
           </p>
         </div>
-        <div className="about__email-button">
-          <a href="mailto:teagenkew@gmail.com" className="about__email-link">
-            Email Teagen
-          </a>
-        </div>
       </div>
     </div>
   );
 }
 
-export default About;
+export default AboutTeagen;
