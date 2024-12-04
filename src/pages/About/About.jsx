@@ -3,7 +3,7 @@ import HeaderAbout from "../../components/HeaderAbout/HeaderAbout";
 import "./About.scss";
 function About() {
   return (
-    <>
+    <div className="about">
       <HeaderAbout />
       <div className="about__container">
         <h1 className="about__title">About</h1>
@@ -19,8 +19,13 @@ function About() {
             confidence, and develop a genuine love for the subject.
           </p>
         </div>
+        <div className="about__email-button">
+          <a href="mailto:teagenkew@gmail.com" className="about__email-link">
+            Email Teagen
+          </a>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 

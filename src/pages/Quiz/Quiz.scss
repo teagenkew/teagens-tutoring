@@ -65,12 +65,12 @@
     color: $Stone;
     border: none;
     box-shadow: -4px 4px $Black;
-    transition: all 0.2s ease; 
-    @include desktop{
-      align-self:center;
+    transition: all 0.2s ease;
+    @include desktop {
+      align-self: center;
     }
     &:active {
-      box-shadow: 0 0 0 $Black; 
+      box-shadow: 0 0 0 $Black;
       transform: translate(-4px, 4px);
     }
   }
@@ -94,8 +94,20 @@
     margin-top: 2rem;
     margin-bottom: 0;
     color: $Plum;
-    @include desktop{
-      align-self:center;
+    @include desktop {
+      align-self: center;
+    }
+  }
+  &__nav-desktop {
+    display: none;
+    @include desktop {
+      display: block;
+    }
+  }
+  &__nav-mobile {
+    width: 100%;
+    @include desktop {
+      display: none;
     }
   }
 }

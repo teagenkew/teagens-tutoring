@@ -75,8 +75,11 @@ function Quiz() {
     <div className="quiz">
       <QuizHeader topic={topic} unit={unit} width={questionCount * 10 + 10} />
       <div className="quiz__container">
-        <div className="quiz__nav-container">
+        <div className="quiz__nav-desktop">
           <NavBar color="purple" direction="column" />
+        </div>
+        <div className="quiz__nav-mobile">
+          <NavBar color="purple" direction="row" />
         </div>
         {!questions[questionCount] ? (
           <div>Loading...</div>

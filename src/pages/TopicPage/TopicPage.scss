@@ -5,11 +5,6 @@
   flex-direction: column;
   &__container {
     @include background-card-style($Stone2);
-    @include desktop {
-      width: 51rem;
-      align-self: center;
-      height: 100vh;
-    }
     & {
       justify-content: flex-start;
     }
@@ -30,6 +25,13 @@
     }
     &--trigonometry {
       @include background-card-style($Sage);
+    }
+    @include desktop {
+      width: 51rem;
+      border-radius:20px;
+      align-self: center;
+      height: 100vh;
+
     }
   }
 
@@ -65,6 +67,18 @@
     }
     &--trigonometry {
       @include card-style($Sage);
+    }
+    @include desktop {
+      height:200px;
+      width:300px;
+    }
+  }
+  &__cards-container {
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap:2rem;
     }
   }
 

@@ -24,27 +24,29 @@ function TopicPage() {
         <h1 className="topic-page__title">
           {formattedTopic.charAt(0).toUpperCase() + formattedTopic.slice(1)}
         </h1>
-        <div
-          className={`topic-page__notes-container topic-page__notes-container--${topic}`}
-          onClick={() => handleClick(`notes`)}
-        >
-          <h2 className="topic-page__notes-title">notes</h2>
-          <img
-            src={notes}
-            alt="student studying big notebook"
-            className="topic-page__image"
-          />
-        </div>
-        <div
-          className={`topic-page__pq-container topic-page__pq-container--${topic}`}
-          onClick={() => handleClick(`practice-questions`)}
-        >
-          <h2 className="topic-page__pq-title">practice questions</h2>
-          <img
-            src={practiceQuestions}
-            alt="laptop with a quiz on it"
-            className="topic-page__image"
-          />
+        <div className="topic-page__cards-container">
+          <div
+            className={`topic-page__notes-container topic-page__notes-container--${topic}`}
+            onClick={() => handleClick(`notes`)}
+          >
+            <h2 className="topic-page__notes-title">notes</h2>
+            <img
+              src={notes}
+              alt="student studying big notebook"
+              className="topic-page__image"
+            />
+          </div>
+          <div
+            className={`topic-page__pq-container topic-page__pq-container--${topic}`}
+            onClick={() => handleClick(`practice-questions`)}
+          >
+            <h2 className="topic-page__pq-title">practice questions</h2>
+            <img
+              src={practiceQuestions}
+              alt="laptop with a quiz on it"
+              className="topic-page__image"
+            />
+          </div>
         </div>
       </div>
     </div>
