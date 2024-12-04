@@ -2,10 +2,17 @@
 @use "../../styles/variables" as *;
 
 .under-construction {
+  display: flex;
+  flex-direction: column;
   &__container {
     @include background-card-style($Stone2);
     & {
       padding: 2rem 1.5rem;
+    }
+    @include desktop {
+      min-height: 100vh;
+      width: 51rem;
+      align-self: center;
     }
   }
 }

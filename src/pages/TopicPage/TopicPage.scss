@@ -28,10 +28,9 @@
     }
     @include desktop {
       width: 51rem;
-      border-radius:20px;
+      border-radius: 20px;
       align-self: center;
       height: 100vh;
-
     }
   }
 
@@ -50,27 +49,25 @@
     width: 75%;
     margin-bottom: 2rem;
     height: 30vh;
-    &--kinematics {
-      @include card-style($Lilac);
+    &:hover {
+      cursor: pointer;
     }
-    &--forces {
-      @include card-style($Coral);
-    }
-    &--circuits {
-      @include card-style($Sage);
-    }
+    &--kinematics,
     &--compositeFunctions {
-      @include card-style($Lilac);
+      background-color: $Lilac;
     }
+    &--forces,
     &--commonGraphs {
-      @include card-style($Coral);
+      background-color: $Coral;
     }
+    &--circuits,
     &--trigonometry {
-      @include card-style($Sage);
+      background-color: $Sage;
     }
+
     @include desktop {
-      height:200px;
-      width:300px;
+      height: 200px;
+      width: 300px;
     }
   }
   &__cards-container {
@@ -78,7 +75,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      gap:2rem;
+      gap: 2rem;
     }
   }
 
@@ -90,5 +87,9 @@
   }
   &__image {
     width: 9.375rem;
+    @include desktop {
+      height: 9rem;
+      width:10rem;
+    }
   }
 }

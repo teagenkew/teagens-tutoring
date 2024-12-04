@@ -16,7 +16,7 @@ function HomePage() {
     <>
       <div className="homepage">
         <div className="homepage__nav-container">
-          <NavBar color={"green-reverse"} direction={"column"} />
+          <NavBar color={"green"} direction={"column"} />
         </div>
         <div>
           <Header />
