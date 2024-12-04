@@ -2,6 +2,16 @@
 @use "../../styles/mixins" as *;
 
 .topic-menu {
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+  }
+  &--blue {
+    background-color: $Sky;
+  }
+  &--orange {
+    background-color: $Clementine;
+  }
   &__title {
     font-size: 2rem;
     font-style: italic;
@@ -14,6 +24,13 @@
     & {
       z-index: 1;
       margin-top: -1.875rem;
+    }
+    @include desktop {
+      height: 90vh;
+      padding: 0 8rem;
+      align-items: center;
+      width: 45rem;
+      align-self: center;
     }
   }
 }
@@ -31,6 +48,9 @@
   display: flex;
   justify-content: center;
   margin: 0 1rem 1rem 1rem;
+  @include desktop {
+    width: 31.25rem;
+  }
 }
 .topic-list {
   width: 100%;
@@ -38,6 +58,9 @@
   padding: 0;
   margin: 0;
   list-style: none;
+  @include desktop {
+    @include flex-center-column;
+  }
 }
 
 .topic {

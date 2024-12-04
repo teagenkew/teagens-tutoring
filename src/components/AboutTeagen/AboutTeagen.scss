@@ -27,7 +27,7 @@
     @include heading-one;
     color: $Stone;
     @include desktop {
-      margin-bottom: 0;
+      margin-bottom: 0.5rem;
     }
   }
   &__paragraph {
