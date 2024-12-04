@@ -13,6 +13,9 @@
     padding: 1rem;
     margin: 2rem 0;
     gap: 1rem;
+    @include desktop {
+      width: 75%;
+    }
   }
   &__title {
     @include heading-two;
@@ -28,6 +31,10 @@
     border: 1px solid $Black;
     border-radius: 15px;
     padding: 0.5rem;
+    @include desktop {
+      width: 80%;
+      align-self: center;
+    }
   }
   &__username {
     @include body-text;

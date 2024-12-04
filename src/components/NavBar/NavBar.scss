@@ -19,9 +19,6 @@
   }
   &--column {
     flex-direction: column;
-    & > .homepage__nav-container {
-      margin-top: 9.375rem;
-    }
   }
   &--purple {
     background: linear-gradient(290deg, rgba($Plum, 80%), $Plum);
