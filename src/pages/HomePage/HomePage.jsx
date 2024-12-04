@@ -16,10 +16,10 @@ function HomePage() {
     <>
       <div className="homepage">
         <div className="homepage__nav-container">
-          <NavBar color={"green-reverse"} />
+          <NavBar color={"green-reverse"} direction={"column"} />
         </div>
         <div>
-        <Header />
+          <Header />
           <div className="main-container">
             <div
               className="physics"

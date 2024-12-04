@@ -17,15 +17,18 @@ function PracticeQuestions() {
     color = "green";
   }
   return (
-    <>
+    <div className={`practice-questions practice-questions--${color}`}>
       <HeaderNoNav color={color} />
-      <div className="practice-question__container">
-        <NavBar color={color} />
-        <QuizList />
-
-        <AllQuestions color={color} />
+      <div className="practice-questions__container">
+        <div className="practice-questions__nav-container">
+          <NavBar color={color} direction={"column"} />
+        </div>
+        <div className="practice-questions__questions-container">
+          <QuizList />
+          <AllQuestions color={color} />
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 

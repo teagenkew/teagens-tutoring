@@ -1,8 +1,15 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 .topic-page {
+  display: flex;
+  flex-direction: column;
   &__container {
     @include background-card-style($Stone2);
+    @include desktop {
+      width: 51rem;
+      align-self: center;
+      height: 100vh;
+    }
     & {
       justify-content: flex-start;
     }

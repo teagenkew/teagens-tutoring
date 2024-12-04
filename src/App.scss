@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   padding: 0;
@@ -13,5 +12,18 @@ body {
 html {
   padding: 0;
   margin: 0;
+}
 
+.page-container {
+  transition: opacity 400ms ease-in-out, transform 300ms ease-in-out;
+}
+
+.fade-in {
+
+  transform: translateY(0); /* Normal position */
+}
+
+.fade-out {
+
+  transform: translateY(-5px);
 }

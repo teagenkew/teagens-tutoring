@@ -18,7 +18,7 @@ function TopicPage() {
   };
 
   return (
-    <div>
+    <div className="topic-page">
       <Header />
       <div className={`topic-page__container topic-page__container--${topic}`}>
         <h1 className="topic-page__title">
