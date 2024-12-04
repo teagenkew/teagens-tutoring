@@ -11,16 +11,27 @@ body {
     padding: 0 8rem 3rem 8rem;
     justify-content: space-between;
   }
+  &__about-container {
+    display: none;
+    @include desktop {
+      display: block;
+      width: 70vw;
+    }
+  }
 }
 .main-container {
   @include background-card-style($Stone2);
-  justify-content: space-evenly;
+  & {
+    justify-content: space-evenly;
+  }
   @include desktop {
     flex-direction: row;
     margin-top: 0;
-    height: auto;
+    height: 28.125rem;
     border-radius: 20px;
     position: relative;
+    margin-bottom: 3rem;
+    width: 70vw;
   }
 }
 
@@ -40,7 +51,7 @@ body {
   @include desktop {
     position: absolute;
     z-index: 2;
-    top: 4.2rem;
+    top: 2rem;
     left: 9rem;
   }
 }
@@ -54,7 +65,7 @@ body {
     background-position-y: 2rem;
     z-index: 1;
     position: absolute; // Layer the cards on top of each other
-    top: 8rem;
+    top: 5rem;
     left: 18rem;
   }
 }

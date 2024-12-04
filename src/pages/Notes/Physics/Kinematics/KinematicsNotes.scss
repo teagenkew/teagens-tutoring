@@ -3,7 +3,9 @@
 
 .kinematics-notes {
   @include background-card-style($Stone);
-  padding: 1rem;
+  & {
+    padding: 1rem;
+  }
 
   &__title {
     @include heading-one;

@@ -4,13 +4,15 @@
 .booking {
   &__container {
     @include background-card-style($Coral);
-    background: linear-gradient(
-      135deg,
-      /* Gradient angle */ $Coral,
-      /* Starting color */ $Red
-    );
-    padding: 2rem;
-    height: 90vh;
+    & {
+      background: linear-gradient(
+        135deg,
+        /* Gradient angle */ $Coral,
+        /* Starting color */ $Red
+      );
+      padding: 2rem;
+      height: 90vh;
+    }
   }
   &__calendar {
     border: 1px solid #ccc; /* Optional border */

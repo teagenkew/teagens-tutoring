@@ -11,8 +11,10 @@
   }
   &__container {
     @include background-card-style($Stone2);
-    z-index: 1;
-    margin-top: -1.875rem;
+    & {
+      z-index: 1;
+      margin-top: -1.875rem;
+    }
   }
 }
 .topic-container:nth-child(1) {

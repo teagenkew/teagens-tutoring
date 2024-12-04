@@ -4,7 +4,7 @@
 .about {
   &__container {
     @include background-card-style($Forest);
-    justify-content: flex-start;
+    &{justify-content: flex-start};
   }
   &__title {
     @include heading-one;
