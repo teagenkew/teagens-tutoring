@@ -3,22 +3,20 @@
 
 .nav-bar {
   display: flex;
-  justify-content: space-evenly;
   padding: 0.5rem;
   width: 100%;
   border-radius: 15px;
   border: 2px solid $Black;
-  @include desktop {
-    justify-content: flex-start;
-    gap: 2rem;
-    width: 5.5rem;
-  }
   &--row {
     flex-direction: row;
-    width: fit-content;
+    justify-content: space-evenly;
+    width: 100%;
   }
   &--column {
     flex-direction: column;
+    justify-content: flex-start;
+    gap:2rem;
+    width: 5.5rem;
   }
   &--purple {
     background: linear-gradient(290deg, rgba($Plum, 80%), $Plum);
@@ -64,7 +62,7 @@
 
   &:hover {
     transform: scale(1.1);
-    background-color: rgba($Lilac, 10%);
+    background-color: rgba($Lilac, 50%);
   }
 
   &--purple {

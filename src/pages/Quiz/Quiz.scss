@@ -2,17 +2,33 @@
 @use "../../styles/variables" as *;
 
 .quiz {
+  display: flex;
+  flex-direction: column;
+  background-color: $Lilac;
   &__container {
     @include background-card-style($Stone);
     & {
       padding: 1rem;
     }
+    @include desktop {
+      width: 51rem;
+      min-height: 100vh;
+      align-self: center;
+      padding: 2rem;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 4rem;
+    }
   }
   &__question-container {
     padding: 0 1rem;
+    @include desktop {
+    }
   }
+
   &__main-question-container {
     display: flex;
+    flex: 1;
   }
   &__question {
     @include body-text;
@@ -49,9 +65,12 @@
     color: $Stone;
     border: none;
     box-shadow: -4px 4px $Black;
-    transition: all 0.2s ease; // Smooth transition effect
+    transition: all 0.2s ease; 
+    @include desktop{
+      align-self:center;
+    }
     &:active {
-      box-shadow: 0 0 0 $Black; // Removes the shadow
+      box-shadow: 0 0 0 $Black; 
       transform: translate(-4px, 4px);
     }
   }
@@ -66,11 +85,17 @@
   }
   &__submission-container {
     @include flex-center-column;
+    @include desktop {
+      align-items: flex-start;
+    }
   }
   &__feedback {
     @include body-text;
     margin-top: 2rem;
     margin-bottom: 0;
     color: $Plum;
+    @include desktop{
+      align-self:center;
+    }
   }
 }

@@ -27,4 +27,18 @@
   &__questions-container {
     flex: 1;
   }
+
+  &__nav-desktop {
+    display: none;
+    @include desktop {
+      display: block;
+    }
+  }
+  &__nav-mobile {
+    width:100%;
+    @include desktop {
+      display: none;
+      
+    }
+  }
 }

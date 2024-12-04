@@ -12,6 +12,9 @@
     @include heading-one;
     margin-bottom: 0.625rem;
   }
+  @include desktop {
+    height: 9.375rem;
+  }
 }
 
 .progress-bar__bg {
@@ -21,10 +24,13 @@
   padding: 0.125rem;
   border-radius: 0.3125rem;
   box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+  @include desktop {
+    width: 50%;
+  }
 }
 .progress {
   background: linear-gradient(90deg, $Plum, lighten($Plum, 20%));
-  height: 100%; 
+  height: 100%;
   border-radius: 3px;
   transition: width 0.4s ease-in-out;
 }

@@ -20,8 +20,11 @@ function PracticeQuestions() {
     <div className={`practice-questions practice-questions--${color}`}>
       <HeaderNoNav color={color} />
       <div className="practice-questions__container">
-        <div className="practice-questions__nav-container">
+        <div className="practice-questions__nav-desktop">
           <NavBar color={color} direction={"column"} />
+        </div>
+        <div className="practice-questions__nav-mobile">
+          <NavBar color={color} direction={"row"} />
         </div>
         <div className="practice-questions__questions-container">
           <QuizList />
