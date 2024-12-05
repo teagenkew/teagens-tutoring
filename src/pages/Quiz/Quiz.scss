@@ -73,6 +73,9 @@
       box-shadow: 0 0 0 $Black;
       transform: translate(-4px, 4px);
     }
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__next-button {
@@ -82,6 +85,9 @@
     height: 2rem;
     width: 6rem;
     text-transform: lowercase;
+    &:hover {
+      cursor: pointer;
+    }
   }
   &__submission-container {
     @include flex-center-column;
@@ -109,5 +115,46 @@
     @include desktop {
       display: none;
     }
+  }
+}
+
+
+.loader {
+  display: inline-flex;
+  justify-content: center;
+  gap: 10px;
+  align-self:center;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  height: 20px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid black;
+  background: radial-gradient(farthest-side, #000 95%, #0000) 35% 35%/6px 6px
+    no-repeat #fff;
+  animation: eyes 3s infinite;
+}
+@keyframes eyes {
+  0%,
+  11% {
+    background-position: 35% 35%;
+  }
+  14%,
+  36% {
+    background-position: 65% 35%;
+  }
+  38%,
+  61% {
+    background-position: 65% 65%;
+  }
+  64%,
+  86% {
+    background-position: 35% 65%;
+  }
+  88%,
+  100% {
+    background-position: 35% 35%;
   }
 }
