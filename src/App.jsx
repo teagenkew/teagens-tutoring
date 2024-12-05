@@ -1,5 +1,5 @@
 import "./App.scss";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import HomePage from "./pages/HomePage/HomePage";
 import About from "./pages/About/About";
@@ -10,6 +10,7 @@ import PracticeQuestions from "./pages/PracticeQuestions/PracticeQuestions";
 import KinematicsNotes from "./pages/Notes/Physics/Kinematics/KinematicsNotes";
 import Quiz from "./pages/Quiz/Quiz";
 import UnderConstruction from "./pages/UnderConstruction/UnderConstruction";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   const location = useLocation();
@@ -22,7 +23,7 @@ function App() {
       setTimeout(() => {
         setCurrentPage(location.pathname);
         setTransitioning(false);
-      }, 200); 
+      }, 200);
     }
   }, [location.pathname, currentPage]);
   return (
@@ -30,6 +31,7 @@ function App() {
       <div
         className={`page-container ${transitioning ? "fade-out" : "fade-in"}`}
       >
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
