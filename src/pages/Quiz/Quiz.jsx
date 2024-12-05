@@ -4,6 +4,7 @@ import axios from "axios";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 import QuizHeader from "../../components/QuizHeader/QuizHeader";
 import NavBar from "../../components/NavBar/NavBar";
+import Loading from "../../components/Loading/Loading";
 import "./Quiz.scss";
 function Quiz() {
   const { subject, topic, unitQuiz } = useParams();
@@ -12,6 +13,7 @@ function Quiz() {
   const [questionCount, setQuestionCount] = useState(0);
   const [userAnswers, setUserAnswers] = useState({});
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const newtonSimplify = async (expression) => {
     const response = await axios.get(
@@ -40,6 +42,7 @@ function Quiz() {
     if (!userAnswer) {
       return;
     }
+    setIsLoading(true);
 
     let isCorrect = false;
 
@@ -50,12 +53,16 @@ function Quiz() {
     const processedCorrectAnswer = questions[questionCount].answers[key]
       .replace(/\//g, "(over)")
       .replace(/\[|\]/g, "");
-
-    const correctAnswer = await newtonSimplify(processedCorrectAnswer);
-    const inputAnswer = await newtonSimplify(processedUserAnswer);
-
-    isCorrect = correctAnswer === inputAnswer;
-    setIsAnswerCorrect(isCorrect);
+    try {
+      const correctAnswer = await newtonSimplify(processedCorrectAnswer);
+      const inputAnswer = await newtonSimplify(processedUserAnswer);
+      isCorrect = correctAnswer === inputAnswer;
+      setIsAnswerCorrect(isCorrect);
+    } catch (err) {
+      console.error("Error Checking Answer. Sorry");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleAnswerChange = (event, key) => {
@@ -112,8 +119,13 @@ function Quiz() {
                     <button
                       className="quiz__submit-button"
                       onClick={() => checkAnswer(userAnswers[key], key)}
+                      disabled={isLoading} // Disable button during loading
                     >
-                      Submit
+                      {isLoading ? (
+                        <div className="loader"></div>
+                      ) : (
+                        "Submit"
+                      )}
                     </button>
 
                     {isAnswerCorrect !== null &&

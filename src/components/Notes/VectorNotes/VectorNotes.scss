@@ -27,4 +27,7 @@
     box-shadow: 0 0 0 $Black; // Removes the shadow
     transform: translate(-4px, 4px);
   }
+  &:hover {
+    cursor: pointer;
+  }
 }
