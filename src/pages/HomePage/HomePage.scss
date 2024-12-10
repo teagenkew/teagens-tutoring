@@ -9,13 +9,13 @@ body {
   @include desktop {
     display: flex;
     padding: 0 8rem 3rem 8rem;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   &__about-container {
     display: none;
     @include desktop {
       display: block;
-      width: 70vw;
+      width: 56rem;
     }
   }
 }
@@ -31,7 +31,7 @@ body {
     border-radius: 20px;
     position: relative;
     margin-bottom: 3rem;
-    width: 70vw;
+    width: 56rem;
   }
 }
 
@@ -73,8 +73,8 @@ body {
 
 .physics,
 .math {
-  height: 170px;
-  width: 80%;
+  height: 10.625rem;
+  width: 18.75rem;
   padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column-reverse;
