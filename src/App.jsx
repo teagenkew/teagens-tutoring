@@ -49,7 +49,7 @@ function App() {
           />
           <Route
             path="/math/topics/compositeFunctions/notes"
-            element={<CompositeFunctions />}
+            element={<UnderConstruction />}
           />
           <Route
             path="/:subject/topics/:topic/notes"
