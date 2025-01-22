@@ -4,7 +4,6 @@ import axios from "axios";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 import QuizHeader from "../../components/QuizHeader/QuizHeader";
 import NavBar from "../../components/NavBar/NavBar";
-import Loading from "../../components/Loading/Loading";
 import "./Quiz.scss";
 function Quiz() {
   const { subject, topic, unitQuiz } = useParams();
@@ -13,7 +12,7 @@ function Quiz() {
   const [questionCount, setQuestionCount] = useState(0);
   const [userAnswers, setUserAnswers] = useState({});
   const [answerCorrectness, setAnswerCorrectness] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
+  const [loadingParts, setLoadingParts] = useState({});
 
   const newtonSimplify = async (expression) => {
     const response = await axios.get(
@@ -42,8 +41,7 @@ function Quiz() {
     if (!userAnswer || userAnswer == "test") {
       return;
     }
-    setIsLoading(true);
-
+    setLoadingParts((prev) => ({ ...prev, [key]: true }));
     let isCorrect = false;
 
     const processedUserAnswer = userAnswer
@@ -64,7 +62,7 @@ function Quiz() {
     } catch (err) {
       console.error("Error Checking Answer. Sorry");
     } finally {
-      setIsLoading(false);
+      setLoadingParts((prev) => ({ ...prev, [key]: false }));
     }
   };
 
@@ -79,7 +77,7 @@ function Quiz() {
     setQuestionCount((prevCount) => prevCount + 1);
     setAnswerCorrectness({});
     setUserAnswers({});
-    setIsLoading(false);
+    setLoadingParts({});
   };
 
   return (
@@ -123,9 +121,13 @@ function Quiz() {
                     <button
                       className="quiz__submit-button"
                       onClick={() => checkAnswer(userAnswers[key], key)}
-                      disabled={isLoading} // Disable button during loading
+                      disabled={loadingParts[key]} // Disable button during loading
                     >
-                      {isLoading ? <div className="loader"></div> : "Submit"}
+                      {loadingParts[key] ? (
+                        <div className="loader"></div>
+                      ) : (
+                        "Submit"
+                      )}
                     </button>
 
                     {answerCorrectness[key] !== undefined &&
