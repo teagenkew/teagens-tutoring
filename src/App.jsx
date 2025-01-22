@@ -11,6 +11,7 @@ import KinematicsNotes from "./pages/Notes/Physics/Kinematics/KinematicsNotes";
 import Quiz from "./pages/Quiz/Quiz";
 import UnderConstruction from "./pages/UnderConstruction/UnderConstruction";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import CompositeFunctions from "./components/Notes/CompositeFunctions/CompositeFunctions.jsx";
 
 function App() {
   const location = useLocation();
@@ -45,6 +46,10 @@ function App() {
           <Route
             path="/physics/topics/kinematics/notes"
             element={<KinematicsNotes />}
+          />
+          <Route
+            path="/math/topics/compositeFunctions/notes"
+            element={<CompositeFunctions />}
           />
           <Route
             path="/:subject/topics/:topic/notes"

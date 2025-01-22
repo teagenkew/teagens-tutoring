@@ -16,8 +16,12 @@ function TopicMenu() {
       navigate(path);
     }, 200);
   };
-  return ( 
-    <div className={`topic-menu ${subject==="physics" ? "topic-menu--blue" : "topic-menu--orange"}`}>
+  return (
+    <div
+      className={`topic-menu ${
+        subject === "physics" ? "topic-menu--blue" : "topic-menu--orange"
+      }`}
+    >
       <Header color={subject == "physics" ? "blue" : "orange"} />
       <div className="topic-menu__container">
         <h1 className="topic-menu__title">
