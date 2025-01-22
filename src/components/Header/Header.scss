@@ -6,12 +6,12 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  height: 28vh;
+  min-height: 28vh;
   @include desktop {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    height: 150px;
+    min-height: 150px;
   }
   &--blue {
     background-color: $Sky;

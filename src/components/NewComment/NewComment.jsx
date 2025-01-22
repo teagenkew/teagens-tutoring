@@ -17,6 +17,26 @@ function NewComment({ refetchComments, topic }) {
     }));
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    // Process form data (e.g., send to an API or update UI)
+    try {
+      const commentBody = {
+        topic: topic,
+        username: formData.username,
+        comment: formData.comment,
+      };
+      const sendComment = await axios.post(`${BASE_URL}/comments`, commentBody);
+      refetchComments();
+      setFormData({
+        username: "",
+        comment: "",
+      });
+    } catch (error) {
+      console.error("Error posting comment:", error);
+    }
+  };
+
   return (
     <div className="new-comment__container">
       <h3 className="new-comment__title">Leave A Comment</h3>
