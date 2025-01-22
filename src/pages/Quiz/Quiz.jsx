@@ -12,7 +12,7 @@ function Quiz() {
   const [questions, setQuestions] = useState([]);
   const [questionCount, setQuestionCount] = useState(0);
   const [userAnswers, setUserAnswers] = useState({});
-  const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
+  const [answerCorrectness, setAnswerCorrectness] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
   const newtonSimplify = async (expression) => {
@@ -39,7 +39,7 @@ function Quiz() {
   }, []);
 
   const checkAnswer = async (userAnswer, key) => {
-    if (!userAnswer) {
+    if (!userAnswer || userAnswer == "test") {
       return;
     }
     setIsLoading(true);
@@ -57,7 +57,10 @@ function Quiz() {
       const correctAnswer = await newtonSimplify(processedCorrectAnswer);
       const inputAnswer = await newtonSimplify(processedUserAnswer);
       isCorrect = correctAnswer === inputAnswer;
-      setIsAnswerCorrect(isCorrect);
+      setAnswerCorrectness((prev) => ({
+        ...prev,
+        [key]: isCorrect,
+      }));
     } catch (err) {
       console.error("Error Checking Answer. Sorry");
     } finally {
@@ -74,8 +77,9 @@ function Quiz() {
 
   const nextQuestion = () => {
     setQuestionCount((prevCount) => prevCount + 1);
-    setIsAnswerCorrect(null);
+    setAnswerCorrectness({});
     setUserAnswers({});
+    setIsLoading(false);
   };
 
   return (
@@ -121,15 +125,11 @@ function Quiz() {
                       onClick={() => checkAnswer(userAnswers[key], key)}
                       disabled={isLoading} // Disable button during loading
                     >
-                      {isLoading ? (
-                        <div className="loader"></div>
-                      ) : (
-                        "Submit"
-                      )}
+                      {isLoading ? <div className="loader"></div> : "Submit"}
                     </button>
 
-                    {isAnswerCorrect !== null &&
-                      (isAnswerCorrect ? (
+                    {answerCorrectness[key] !== undefined &&
+                      (answerCorrectness[key] ? (
                         <>
                           <p className="quiz__feedback">
                             <strong>Correct!</strong> Move onto the next
