@@ -49,6 +49,9 @@ body {
   background-image: url("../../assets/physics-home.png");
   background-position-x: -20px;
   background-size: 180px;
+  @include tablet {
+    background-size: 210px;
+  }
   @include desktop {
     position: absolute;
     z-index: 2;
@@ -62,6 +65,9 @@ body {
   background-image: url("../../assets/math-home.png");
   background-position-x: -20px;
   background-size: 200px;
+  @include tablet {
+    background-size: 250px;
+  }
   @include desktop {
     background-position-y: 2rem;
     z-index: 1;
@@ -73,8 +79,10 @@ body {
 
 .physics,
 .math {
-  height: 10.625rem;
-  width: 18.75rem;
+  height: 200px;
+  width: 90%;
+  max-width: 22.8rem;
+  min-width: 17.8rem;
   padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column-reverse;
@@ -84,15 +92,16 @@ body {
   @include desktop {
     height: 20rem;
     width: 30rem;
+    max-width: 30rem;
     background-size: 18rem;
     justify-content: flex-start;
     padding: 2.5rem 2rem;
     transition: transform 0.3s ease, z-index 0.3s ease; // Smooth transition for hover effects
-    transform: scale(1); // Default scale
+    transform: scale(1);
     cursor: pointer;
     &:hover {
-      transform: scale(1.03); // Enlarge the hovered card
-      z-index: 10; // Bring the hovered card to the front
+      transform: scale(1.03);
+      z-index: 10;
     }
   }
 }

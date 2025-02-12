@@ -41,13 +41,14 @@
 
   &__button-container {
     display: flex;
-    width: 80%;
-    align-self: flex-end;
+    max-width: fit-content;
+    margin-left: 4.5rem;
+    align-self: center;
     justify-content: center;
     gap: 0.8rem;
     @include desktop {
-      align-self: center;
       justify-content: flex-start;
+      margin-left: 0;
     }
   }
   &__button {
