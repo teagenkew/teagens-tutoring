@@ -57,6 +57,15 @@ function SigFigs() {
           </li>
         </ul>
       </ul>
+      <h4>little note:</h4>
+      <p>
+        if you see a decimal with nothing behind it like{" "}
+        <InlineMath math="10." /> or <InlineMath math="500." /> this means the
+        measurement is precise to the ones place. We cannot assume it is 10.0 or
+        500.0, but we can look at that decimal place as if it's trapping the
+        zero. So, <InlineMath math="10." /> has 2 Sig Figs and{" "}
+        <InlineMath math="500." /> has 3.
+      </p>
       <table className="sigfig-notes__examples">
         <tr>
           <th>Example</th>
