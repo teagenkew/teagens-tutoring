@@ -8,8 +8,11 @@
     & {
       justify-content: flex-start;
     }
+    &--uncertainty-significant-figures {
+      @include background-card-style($Sage);
+    }
     &--kinematics {
-      @include background-card-style($Lilac);
+      @include background-card-style($Clementine);
     }
     &--forces {
       @include background-card-style($Coral);
@@ -51,9 +54,12 @@
     &:hover {
       cursor: pointer;
     }
+    &--uncertainty-significant-figures {
+      background-color: $Sage;
+    }
     &--kinematics,
     &--compositeFunctions {
-      background-color: $Lilac;
+      background-color: $Clementine;
     }
     &--forces,
     &--commonGraphs {

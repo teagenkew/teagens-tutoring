@@ -30,19 +30,63 @@ function SigFigs() {
           All nonzero numbers are{" "}
           <span className="sigfigs-notes__emphasis">always</span> significant
         </li>
-        <li className="sigfigs-notes__list-item">Trapped zeros count!</li>
+        <li className="sigfigs-notes__list-item">
+          Trapped zeros are significat
+        </li>
         <li className="sigfigs-notes__list-item">
           Leading zeros and trailing zeros <span>with no decimal place</span>{" "}
-          don't count.
+          are not significant.
         </li>
-        <li className="sigfigs-notes__list-item">
-          If there is a decimal: Zeros to the right of the decimal count if they
-          follow a non-zero digit.
-        </li>
+
+        <li>If there is a decimal:</li>
+        <ul>
+          <li>
+            If the number to the left is 0: Only numbers on the right side of
+            the decimal place that are trapped or follow a non-zero number are
+            significant. <br></br>
+            For example: <InlineMath math="0.00506" /> has 3 Sig Figs.{" "}
+            <InlineMath math="0.10001" /> has 5 Sig Figs.{" "}
+            <InlineMath math="0.0000000040" /> has 2 Sig Figs.
+          </li>
+          <li>
+            If the number to the left of the decimal is not 0: The decimal point
+            makes all trailing zeros significant.<br></br> For example:{" "}
+            <InlineMath math="10.0" /> has 3 Sig Figs.{" "}
+            <InlineMath math="1989.00" /> has 6 Sig Figs.{" "}
+            <InlineMath math="1.000" /> has 4 Sig Figs.
+          </li>
+        </ul>
       </ul>
-      <div className="sigfig-notes__examples">
-        
-      </div>
+      <table className="sigfig-notes__examples">
+        <tr>
+          <th>Example</th>
+          <th>Number of Sig Figs</th>
+        </tr>
+        <tr>
+          <td>300</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>300.0</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>0.004050</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>10.0</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>0.005</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>14.6</td>
+          <td>3</td>
+        </tr>
+      </table>
     </section>
   );
 }

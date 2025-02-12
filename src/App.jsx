@@ -12,6 +12,7 @@ import Quiz from "./pages/Quiz/Quiz";
 import UnderConstruction from "./pages/UnderConstruction/UnderConstruction";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import CompositeFunctions from "./components/Notes/CompositeFunctions/CompositeFunctions.jsx";
+import UncertaintiesNotes from "./pages/Notes/Physics/Uncertainties/UncertaintiesNotes.jsx";
 
 function App() {
   const location = useLocation();
@@ -46,6 +47,10 @@ function App() {
           <Route
             path="/physics/topics/kinematics/notes"
             element={<KinematicsNotes />}
+          />
+          <Route
+            path="/physics/topics/uncertainty-significant-figures/notes"
+            element={<UncertaintiesNotes />}
           />
           <Route
             path="/math/topics/compositeFunctions/notes"
