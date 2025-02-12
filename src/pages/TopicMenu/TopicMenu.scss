@@ -35,13 +35,16 @@
   }
 }
 .topic-container:nth-child(1) {
-  @include card-style($Lilac);
+  @include card-style($Sage);
 }
 .topic-container:nth-child(2) {
-  @include card-style($Coral);
+  @include card-style($Clementine);
 }
 .topic-container:nth-child(3) {
-  @include card-style($Sage);
+  @include card-style($Lilac);
+}
+.topic-container:nth-child(4) {
+  @include card-style($Coral);
 }
 
 .topic-container {

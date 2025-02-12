@@ -2,7 +2,12 @@ import Header from "../../components/Header/Header";
 import { useNavigate, useParams } from "react-router-dom";
 import "./TopicMenu.scss";
 const topics = {
-  physics: ["Kinematics", "Forces", "Circuits"],
+  physics: [
+    "Uncertainty & Significant Figures",
+    "Kinematics",
+    "Forces",
+    "Circuits",
+  ],
   math: ["Composite Functions", "Common Graphs", "Trigonometry"],
 };
 
@@ -11,9 +16,18 @@ function TopicMenu() {
   const navigate = useNavigate();
   const topicList = topics[subject];
 
+  const processPath = (path) => {
+    let newPath = path.toLowerCase();
+    newPath = newPath.replace(/&/g, " ");
+    newPath = newPath.replace(/\s+/g, "-");
+
+    return newPath;
+  };
+
   const handleClick = (path) => {
+    let URLpath = processPath(path);
     setTimeout(() => {
-      navigate(path);
+      navigate(URLpath);
     }, 200);
   };
   return (
@@ -33,13 +47,7 @@ function TopicMenu() {
               <div
                 className="topic-container"
                 key={index}
-                onClick={() =>
-                  handleClick(
-                    `${
-                      topic.charAt(0).toLowerCase() + topic.slice(1)
-                    }/`.replace(/\s+/g, "")
-                  )
-                }
+                onClick={() => handleClick(`${topic}`)}
               >
                 <li className="topic">{topic}</li>
               </div>

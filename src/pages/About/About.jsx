@@ -11,12 +11,13 @@ function About() {
         <div className="about__paragraph-container">
           <p className="about__paragraph">
             Teagen has been a dedicated tutor for over ten years, specializing
-            in physics and math. With a Master’s degree in Physics from Western
-            University and a double major in Mathematics and Physics from Acadia
-            University, Teagen combines deep subject expertise with an
-            empathetic teaching style. By fostering student-directed sessions,
-            Teagen empowers learners to take charge of their education, build
-            confidence, and develop a genuine love for the subject.
+            in physics and math. With a Master&apos;s degree in Physics from
+            Western University and a double major in Mathematics and Physics
+            from Acadia University, Teagen combines deep subject expertise with
+            an empathetic teaching style. By opting for student-directed
+            sessions, Teagen empowers learners to take charge of their
+            education, build confidence, and develop a genuine love for the
+            subject.
           </p>
         </div>
         <div className="about__email-button">
