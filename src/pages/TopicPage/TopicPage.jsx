@@ -7,9 +7,18 @@ function TopicPage() {
   const { subject, topic } = useParams();
   const navigate = useNavigate();
 
-  const formattedTopic = decodeURIComponent(
-    topic.replace(/([a-z])([A-Z])/g, "$1 $2")
-  );
+  const originalPaths = {
+    "uncertainty-significant-figures": "Uncertainty & Significant Figures",
+    kinematics: "Kinematics",
+    forces: "Forces",
+  };
+
+  const formattedTopic = (topic) => {
+    return (
+      originalPaths[topic] ||
+      decodeURIComponent(topic.replace(/([a-z])([A-Z])/g, "$1 $2"))
+    );
+  };
 
   const handleClick = (path) => {
     setTimeout(() => {
@@ -22,7 +31,7 @@ function TopicPage() {
       <Header />
       <div className={`topic-page__container topic-page__container--${topic}`}>
         <h1 className="topic-page__title">
-          {formattedTopic.charAt(0).toUpperCase() + formattedTopic.slice(1)}
+          {formattedTopic(topic)}
         </h1>
         <div className="topic-page__cards-container">
           <div
