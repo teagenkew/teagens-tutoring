@@ -1,0 +1,28 @@
+@use "../../../styles/mixins" as *;
+@use "../../../styles/variables" as *;
+
+.sigfigs-notes {
+  @include flex-center-column;
+  &__button {
+    @include quiz-myself-button($Sage);
+  }
+  &__title {
+    @include heading-two;
+  }
+  &__subtitle {
+    @include heading-three;
+  }
+  &__body {
+    @include body-text;
+  }
+  &__emphasis {
+    @include body-text;
+    font-weight: 600;
+    font-style: italic;
+  }
+}
+
+h4 {
+  align-self: flex-start;
+  margin-bottom: 0;
+}

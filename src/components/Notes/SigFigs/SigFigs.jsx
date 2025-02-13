@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { InlineMath } from "react-katex";
 import "katex/dist/katex.min.css";
-
-import React from "react";
+import "./SigFigs.scss";
 
 function SigFigs() {
   const navigate = useNavigate();
@@ -19,7 +18,7 @@ function SigFigs() {
         it's a standardized way to ensure consistent calculations.
       </p>
       <p className="sigfigs-notes__body">
-        For example, 9.14 m is a more precise measurement than 9.1 - three
+        For example, 9.14 m is a more precise measurement than 9.1 m - three
         significant digits show us that there is less uncertainty in the first
         measurement than the second.
       </p>
@@ -31,7 +30,7 @@ function SigFigs() {
           <span className="sigfigs-notes__emphasis">always</span> significant
         </li>
         <li className="sigfigs-notes__list-item">
-          Trapped zeros are significat
+          Trapped zeros are significant
         </li>
         <li className="sigfigs-notes__list-item">
           Leading zeros and trailing zeros <span>with no decimal place</span>{" "}
@@ -67,35 +66,43 @@ function SigFigs() {
         <InlineMath math="500." /> has 3.
       </p>
       <table className="sigfig-notes__examples">
-        <tr>
-          <th>Example</th>
-          <th>Number of Sig Figs</th>
-        </tr>
-        <tr>
-          <td>300</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <td>300.0</td>
-          <td>4</td>
-        </tr>
-        <tr>
-          <td>0.004050</td>
-          <td>4</td>
-        </tr>
-        <tr>
-          <td>10.0</td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <td>0.005</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <td>14.6</td>
-          <td>3</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Example</th>
+            <th>Number of Sig Figs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>300</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>300.0</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>0.004050</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>10.0</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>0.005</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>14.6</td>
+            <td>3</td>
+          </tr>
+        </tbody>
       </table>
+
+      <button className="sigfigs-notes__button">
+        Quiz Myself on This Topic
+      </button>
     </section>
   );
 }

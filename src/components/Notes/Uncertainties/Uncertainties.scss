@@ -1,0 +1,11 @@
+@use "../../../styles/mixins" as *;
+@use "../../../styles/variables" as *;
+
+.uncertainties {
+  &__title {
+    @include heading-two;
+  }
+  &__body {
+    @include body-text;
+  }
+}

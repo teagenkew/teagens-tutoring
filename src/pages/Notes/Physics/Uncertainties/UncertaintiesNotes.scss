@@ -1,0 +1,16 @@
+@use "../../../../styles/variables" as *;
+@use "../../../../styles/mixins" as *;
+
+.uncertainties-page {
+  @include background-card-style($Stone);
+  padding: $mobile-padding;
+  @include tablet {
+    padding: $tablet-padding;
+  }
+  @include desktop {
+    padding: $desktop-padding;
+  }
+  &__title {
+    @include heading-one;
+  }
+}

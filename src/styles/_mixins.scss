@@ -27,6 +27,25 @@
     min-height: 30vh;
   }
 }
+
+@mixin quiz-myself-button($bg-color) {
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  border: 1px solid $Black;
+  background-color: $bg-color;
+  color: $Black;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: -4px 4px $Black;
+  transition: all 0.2s ease; // Smooth transition effect
+  &:active {
+    box-shadow: 0 0 0 $Black; // Removes the shadow
+    transform: translate(-4px, 4px);
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
 @mixin heading-one {
   font-size: 2rem;
   font-style: italic;
