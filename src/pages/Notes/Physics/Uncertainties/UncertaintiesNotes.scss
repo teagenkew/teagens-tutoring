@@ -18,7 +18,7 @@
     @include notes-nav;
   }
   &__button {
-    @include notes-nav-buttons($Forest, $Stone, $Sage, $Forest, black);
+    @include notes-nav-buttons($Forest, $Stone, $LightSage, $Forest, black);
     font-size: 12px;
   }
 }

@@ -28,17 +28,6 @@
   }
   &__button {
     @include notes-nav-buttons($Plum, $Stone, $Lilac, $Plum, black);
-    //   background-color: $Plum;
-    // color: $Stone;
-    // padding: 0.5rem;
-    // border: none;
-    // border-radius: 15px;
-    // &:hover {
-    //   cursor: pointer;
-    //   background-color: $Lilac;
-    //   color: black;
-    //   outline: 1px solid $Plum;
-    // }
   }
   &__container-one,
   &__container-two {

@@ -10,18 +10,17 @@ function Uncertainties() {
     <section className="uncertainties-">
       <h2 className="uncertainties__title">Uncertainties</h2>
       <p className="uncertainties__body">
-        Significant figures (sometimes called significant digits) are a way for
-        scientists to relay the certainty of a measurement, and ensure
-        consistency across calculations. As the number of significant figures
-        increases, the more certain the measurement. We use significant figures
-        to <span className="uncertainties__emphasis">reflect precision</span>.
-        Using significant figures also prevents-over rounding or over-precision,
-        it's a standardized way to ensure consistent calculations.
+        No measurement is ever <span>totally</span> perfect. Even if you have a
+        super precise timer with lots of decimal places, that last decimal place
+        leaves us with some uncertainty about the measurement.
       </p>
       <p className="uncertainties__body">
-        For example, 9.14 m is a more precise measurement than 9.1 m - three
-        significant digits show us that there is less uncertainty in the first
-        measurement than the second.
+        Let's say you're timing a swim race. Your swimmer touches the wall and
+        you press stop on your stopwatch - it reads 25.544. That's pretty
+        precise! But maybe someone beside you has an even more precise
+        stopwatch, it reads 25.5443. Without a more precise instrument, you
+        wouldn't have known if the swimmer was closer to 25.545 or 24.543, so
+        that last digit gives us an uncertainty in our measurement.
       </p>
     </section>
   );

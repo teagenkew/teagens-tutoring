@@ -89,6 +89,8 @@
   border: none;
   border-radius: 15px;
   font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
   &:hover {
     cursor: pointer;
     background-color: $hover-bg;
