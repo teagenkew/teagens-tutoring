@@ -13,4 +13,12 @@
   &__title {
     @include heading-one;
   }
+
+  &__nav {
+    @include notes-nav;
+  }
+  &__button {
+    @include notes-nav-buttons($Forest, $Stone, $Sage, $Forest, black);
+    font-size: 12px;
+  }
 }

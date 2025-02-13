@@ -12,11 +12,11 @@ function UncertaintiesNotes() {
           Uncertainties & Significant Figures
         </h1>
         <nav className="uncertainties-page__nav">
-          <button>Uncertainties</button>
-          <button>Adding/Subtracting with Uncertainties</button>
-          <button>Multiplication/Division with Uncertainties</button>
-          <button>Significant Figures</button>
-          <button>Counting Significant Figures</button>
+          <button className="uncertainties-page__button">Uncertainties</button>
+          <button className="uncertainties-page__button">Adding/Subtracting with Uncertainties</button>
+          <button className="uncertainties-page__button">Multiplication/Division with Uncertainties</button>
+          <button className="uncertainties-page__button">Significant Figures</button>
+          <button className="uncertainties-page__button">Counting Significant Figures</button>
         </nav>
         <SigFigs />
       </div>
