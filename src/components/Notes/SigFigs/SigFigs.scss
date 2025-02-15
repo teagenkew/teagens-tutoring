@@ -8,6 +8,7 @@
   }
   &__title {
     @include heading-two;
+    margin-top: 3rem;
   }
   &__subtitle {
     @include heading-three;

@@ -2,10 +2,38 @@
 @use "../../../styles/variables" as *;
 
 .uncertainties {
+  @include flex-center-column;
   &__title {
     @include heading-two;
+    margin-top: 3rem;
   }
   &__body {
     @include body-text;
+  }
+  &__subtitle {
+    @include heading-three;
+    margin-top: 1.5rem;
+  }
+  &__subsubtitle {
+    @include heading-four;
+  }
+  &__image-container {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+      gap: 4rem;
+    }
+    @include desktop {
+      gap: 12rem;
+    }
+  }
+  &__notes-image {
+    width: 100%;
+    max-width: 28.125rem;
+    @include tablet {
+      min-width: 20rem;
+      width: 33%;
+    }
   }
 }
