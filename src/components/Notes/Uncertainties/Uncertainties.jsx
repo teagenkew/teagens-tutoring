@@ -44,9 +44,9 @@ function Uncertainties() {
         Let's continue with our swim race example. We measured 25.54 s - but we
         don't know anything more beyond that. For example was the clock{" "}
         <span className="uncertainties__emphasis">just</span> about to change to
-        25.55 s? or had it <span>just</span> turned to 25.54? This uncertainty
-        is built into timers, so we decide that the uncertainty of a timer is
-        the smallest digit it can measure.
+        25.55 s? or had it <span className="uncertainties__emphasis">just</span>{" "}
+        turned to 25.54? This uncertainty is built into timers, so we decide
+        that the uncertainty of a timer is the smallest digit it can measure.
       </p>
       <div className="uncertainties__image-container">
         <p>
@@ -55,14 +55,15 @@ function Uncertainties() {
         <img className="uncertainties__notes-image" src={digitalMeasure}></img>
       </div>
       <h4 className="uncertainties__subsubtitle">
-        Scale Devices (Rulers, Mercury Thermometer, )
+        Scale Devices (Rulers, Mercury Thermometer, Balance Scales)
       </h4>
       <p>
-        Anything that you yourself are deciding the measurement by reading it is
-        a scale measure. The easiest example of this is a ruler, We can measure
-        accurately to the closest millimeter on most rulers, and then we have to
-        guess in that in between space. So for this reason, the uncertainty of
-        scale measurements is the smallest increment divided by 2.
+        Any situation where you yourself are deciding the measurement by reading
+        "between the lines" is a scale measure. The easiest example of this is a
+        ruler, We can measure accurately to the closest millimeter on most
+        rulers, and then we have to guess in that in between space. So for this
+        reason, the uncertainty of scale measurements is the smallest increment
+        divided by 2.
       </p>
       <div className="uncertainties__image-container">
         <p>
@@ -70,6 +71,51 @@ function Uncertainties() {
           s
         </p>
         <img className="uncertainties__notes-image" src={scaleMeasure}></img>
+      </div>
+      <h3 className="uncertainties__subtitle">
+        Relative vs. Absolute Uncertainties
+      </h3>
+      <p className="uncertainties__body">
+        Uncertainty can be expressed either as a{" "}
+        <span className="uncertainties__emphasis">relative</span> value or an{" "}
+        <span className="uncertainties__emphasis">absolute</span> value. All the
+        uncertainties we have seen so far have been absolute.
+      </p>
+      <p className="uncertainties__body">
+        If the uncertainty is relative, it will be expressed a percentage of the
+        measurement.
+      </p>
+      <div className="uncertainties__container">
+        <article className="uncertainties__article">
+          <h4 className="uncertainties__subsubtitle">Relative</h4>
+          <p className="uncertainties__body">
+            Measurement <InlineMath math="\pm" /> Uncertainty %
+          </p>
+          <p className="uncertainties__body">
+            <InlineMath math="20~\text{s} \pm 2\%" />
+          </p>
+          <p className="uncertainties__body">
+            <InlineMath math="1000~\text{cm} \pm 10\%" />
+          </p>
+          <p className="uncertainties__body">
+            <InlineMath math="50~\text{km/h} \pm 1\%" />
+          </p>
+        </article>
+        <article className="uncertainties__article">
+          <h4 className="uncertainties__subsubtitle">Absolute</h4>
+          <p className="uncertainties__body">
+            Measurement <InlineMath math="\pm" /> Uncertainty %
+          </p>
+          <p className="uncertainties__body">
+            <InlineMath math="20~\text{s} \pm 0.4~\text{s}" />
+          </p>
+          <p className="uncertainties__body">
+            <InlineMath math="1000~\text{cm} \pm 100~\text{cm}" />
+          </p>
+          <p className="uncertainties__body">
+            <InlineMath math="50~\text{km/h} \pm 0.5~\text{km/h}" />
+          </p>
+        </article>
       </div>
     </section>
   );

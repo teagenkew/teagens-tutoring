@@ -9,6 +9,7 @@
   }
   &__body {
     @include body-text;
+    align-self: flex-start;
   }
   &__subtitle {
     @include heading-three;
@@ -35,5 +36,10 @@
       min-width: 20rem;
       width: 33%;
     }
+  }
+  &__container {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
   }
 }
