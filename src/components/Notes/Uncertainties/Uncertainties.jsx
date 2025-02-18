@@ -29,7 +29,7 @@ function Uncertainties() {
       </p>
       <p className="uncertainties__body">
         Uncertainty is about recognizing the limits of what we can measure.
-        Every tool we use hasa level of uncertainty - whether that's a ruler, a
+        Every tool we use has a level of uncertainty - whether that's a ruler, a
         scale or even a super precise laser. Scientists report uncertainties to
         make their results as accurate and meaningful as possible. Uncertainties
         help us keep our feet on the ground!
@@ -104,7 +104,7 @@ function Uncertainties() {
         <article className="uncertainties__article">
           <h4 className="uncertainties__subsubtitle">Absolute</h4>
           <p className="uncertainties__body">
-            Measurement <InlineMath math="\pm" /> Uncertainty %
+            Measurement <InlineMath math="\pm" /> Uncertainty (unit)
           </p>
           <p className="uncertainties__body">
             <InlineMath math="20~\text{s} \pm 0.4~\text{s}" />
